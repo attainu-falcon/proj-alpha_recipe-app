@@ -1,0 +1,19 @@
+{
+  "name": "proj-alpha_recipe-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attainu-falcon/proj-alpha_recipe-app.git"
+  },
+  "author": "Shakti Pradhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attainu-falcon/proj-alpha_recipe-app/issues"
+  },
+  "homepage": "https://github.com/attainu-falcon/proj-alpha_recipe-app#readme"
+}
