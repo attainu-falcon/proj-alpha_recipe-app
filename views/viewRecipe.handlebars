@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Single Recipe</title>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/c9ec4f82cc.js"></script>
+    <link rel="stylesheet" href="/css/{{style}}.css" />
+</head>
+
+<body>
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-social">
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="user-panel">
+                    <a href="#">Register</a> /
+                    <a href="#">Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom ">
+            <div class="container-fluid">
+                <a href="index.html" class="site-logo">
+                    <h2>Delicious.ly</h2>
+                </a>
+                <div class="header-search">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <ul class="main-menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">My Recipe</a></li>
+                    <li><a href="">Recipies</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href=""> Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+    <!-- Hero section -->
+    <section class="page-top-section set-bg card">
+        <img src="./assets/page-top-bg.jpg" alt="" />
+        <div class="container ">
+            <h2 class="card-img-overlay">
+                Recipe
+            </h2>
+        </div>
+    </section>
+    <!-- Hero section end -->
+
+    <!-- Search section -->
+    <div class="search-form-section">
+        <div class="sf-warp">
+            <div class="container">
+                <!-- <img src="./assets/latest1.jpg" alt="" /> -->
+                <form class="big-search-form  p-4">
+                    <select>
+                        <option>All Recipes Categories</option>
+                        <option>Begginers</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                    <select>
+                        <option>All Ingredients</option>
+                        <option>Breakfast</option>
+                        <option>Lunch</option>
+                        <option>Dinner</option>
+                    </select>
+                    <input type="text" placeholder="Search Receipies" />
+                    <button class="bsf-btn" style="color:white">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Search section end -->
+
+    <!-- Recipe big view -->
+    <div class="recipe-view-section mb-4">
+        <div class="rv-warp set-bg">
+            <img src="./assets/brooke-lark-275181-unsplash.jpg" alt="" class="mb-5" />
+        </div>
+    </div>
+
+    <!-- Recipe details section -->
+    <section class="recipe-details-section mt-5">
+        <div class="container-fluid">
+            <div class="recipe-meta">
+                <div class="racipe-cata">
+                    <span style="color:white">For Begginers</span>
+                </div>
+                <h2>Lamb Chops with green peper sauce</h2>
+                <div class="recipe-date">May 15, 2018</div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star is-fade"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="recipe-filter-warp">
+                        <div class="filter-top">
+                            <div class="filter-top-text">
+                                <p>Prep: 15 mins</p>
+                                <p>Cook: 30 mins</p>
+                                <p>Yields: 8 Servings</p>
+                            </div>
+                        </div>
+                        <!-- recipe filter form -->
+                        <div class="filter-form-warp">
+                            <h2>Ingredients</h2>
+                            <form class="filter-form">
+                                <div class="check-warp">
+                                    <input type="checkbox" id="one" />
+                                    <label for="one">4 Tbsp (57 gr) butter</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="two" />
+                                    <label for="two">2 large eggs</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="three" />
+                                    <label for="three">2 yogurt containers granulated sugar</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="four" />
+                                    <label for="four">1 vanilla or plain yogurt, 170g container</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="five" />
+                                    <label for="five">White flour</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="six" />
+                                    <label for="six">1.5 yogurt containers milk</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="seven" />
+                                    <label for="seven">1/4 tsp cinnamon</label>
+                                </div>
+                                <div class="check-warp">
+                                    <input type="checkbox" id="eight" />
+                                    <label for="eight">1 cup fresh blueberries </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <ul class="recipe-info-list">
+                        <li>
+                            <h2>01.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
+                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras
+                                a tortor enim. Phasellus posuere vestibulum ipsum, eget
+                                lobortis purus. Orci varius natoque penatibus et magni.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>02.</h2>
+                            <p>
+                                Sit amet, consectetur adipiscing elit. Vestibulum nec varius
+                                dui. Suspendisse potenti. Vestibulum ac pellentesque tortor.
+                                Aenean congue sed metus in iaculis. Cras a tortor enim.
+                                Phasellus posuere vestibulum ipsum, eget lobortis purus.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>03.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
+                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras
+                                a tortor enim. Phasellus posuere vestibulum ipsum
+                            </p>
+                        </li>
+                        <li>
+                            <h2>04.</h2>
+                            <p>
+                                Sit amet, consectetur adipiscing elit. Vestibulum nec varius
+                                dui. Suspendisse potenti. Vestibulum ac pellentesque tortor.
+                                Aenean congue sed metus in iaculis. Cras a tortor enim.
+                                Phasellus posuere vestibulum ipsum, eget lobortis.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>05.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
+                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras
+                                a tortor enim. Phasellus posuere vestibulum ipsum, eget
+                                lobortis purus. Orci varius natoque penatibus et magni.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Recipe details section end -->
+
+    <!-- Review section -->
+    <section class="comment-section spad pt-0">
+        <div class="container">
+            <h4>
+                Write a review
+            </h4>
+
+            <form class="comment-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <input type="text" placeholder="Rate" /> -->
+                        <div class="rating my-3">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star is-fade"></i>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6">
+              <input type="text" placeholder="E-mail" />
+            </div> -->
+                    <div class="col-md-12">
+                        <input type="text" placeholder="Title" />
+                        <textarea placeholder="Review"></textarea>
+                        <button class="site-btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Review section -->
+
+    <!-- Footer section  -->
+    <footer class="footer-section set-bg" id="footer" data-setbg="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-logo">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-right">
+                    <ul class="footer-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">My Recipes</a></li>
+                        <li><a href="#">Recipies</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                    <p class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy; All rights reserved |Made by Alpha
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
+
+    <!--====== Javascripts & Jquery ======-->
+</body>
+
+</html>
