@@ -15,7 +15,15 @@ router.post("/", (req, res) => {
     totaltime: req.body.totaltime,
     cookingtime: req.body.cookingtime,
     preptime: req.body.preptime,
-    instructionsteps: req.body.instructionsteps
+    instructionsteps: req.body.instructionsteps,
+    cuisine: req.body.cuisine,
+    difficulty: req.body.difficulty,
+    recipetype: req.body.recipetype,
+    ingredients: {
+      quantity: req.body.quantity,
+      measure: req.body.measure,
+      item: req.body.item
+    }
   };
   if (!newRecipe || !newRecipe) {
     return res.status(400).json({ msg: "cannot post empty form" });

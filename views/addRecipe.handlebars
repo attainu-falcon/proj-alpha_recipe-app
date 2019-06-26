@@ -61,7 +61,7 @@
     </section>
     <!-- Hero section end -->
     <!-- ADD FORM -->
-    <form class=" pt-5 my-5 mx-5 bg-light p-4">
+    <form class=" pt-5 my-5 mx-5 bg-light p-4" method="POST" action="/add">
         <div class="form-group">
             <label for="exampleInputEmail1">Title</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="title" />
@@ -75,32 +75,19 @@
             <div class="row">
                 <div class="col-4">
                     <label for="exampleFormControlSelect1">Recipe Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="recipetype" />
                 </div>
                 <div class="col-4">
                     <label for="exampleFormControlSelect1"> Cuisine</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="cuisine" />
                 </div>
                 <div class="col-4">
                     <label for="exampleFormControlSelect1"> Skill Level</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <select class="form-control" id="exampleFormControlSelect1" name="difficulty">
+                        <option>Begginers</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+
                     </select>
                 </div>
             </div>
@@ -109,33 +96,39 @@
             <label for="exampleInputEmail1"># of serving</label>
             <input type="number" class="form-control" id="exampleInputEmail1" name="serving" />
         </div>
+        Ingredients
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Ingredients</th>
+                    <th scope="col">
+                        Quantity
+                    </th>
                     <th scope="col">Measure</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Item</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td> <input type="number" class="form-control" id="exampleInputEmail1" name="quantity" /></td>
+                    <td><input type="number" class="form-control" id="exampleInputEmail1" name="measure" /></td>
+                    <td><input type="text" class="form-control" id="exampleInputEmail1" name="item" /></td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <th scope="row">1</th>
+                    <td> <input type="number" class="form-control" id="exampleInputEmail1" name="quantity" /></td>
+                    <td><input type="number" class="form-control" id="exampleInputEmail1" name="measure" /></td>
+                    <td><input type="text" class="form-control" id="exampleInputEmail1" name="item" /></td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <th scope="row">1</th>
+                    <td> <input type="number" class="form-control" id="exampleInputEmail1" name="quantity" /></td>
+                    <td><input type="number" class="form-control" id="exampleInputEmail1" name="measure" /></td>
+                    <td><input type="text" class="form-control" id="exampleInputEmail1" name="item" /></td>
                 </tr>
+
+
             </tbody>
         </table>
         <label for="exampleInputEmail1">Time Taken</label>
@@ -149,12 +142,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" style="color:white;">
-                                Total Time
-                            </label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="minutes" />
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -167,11 +155,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" style="color:white;">Cooking Time
-                            </label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="minutes" />
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -184,11 +168,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" style="color:white;">Preparation Time
-                            </label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="minutes" />
-                        </div>
+
                     </div>
                 </div>
             </div>

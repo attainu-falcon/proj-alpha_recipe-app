@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Recipe App</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="food, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+
+</head>
+
+<body>
+
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-social">
+
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+
+                </div>
+                <a href="#">Register</a> /
+                <a href="#">Login</a>
+            </div>
+        </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <a href="index.html" class="site-logo">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <div class="nav-switch">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Features</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+
+
+    <section class="recipes-section spad pt-0">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest recipes</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe">
+
+
+                        {{#each recipes }}
+                        <div class="card">
+                            <img class="card-img-top" src="" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.title}}</h5>
+                                <p class="card-text">
+                                    {{this.description}}
+                                </p>
+                            </div>
+                        </div>
+
+                        {{/each}}
+
+                        {{!-- <img src="" alt="">
+                        <div class="recipe-info-warp">
+                            <div class="recipe-info"> --}}
+                                {{!-- <h3>Traditional Pizza</h3> --}}
+                                {{!-- <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star is-fade"></i>
+                                </div> --}}
+
+                                {{!-- </div> --}}
+                            {{!--
+                        </div> --}}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>
