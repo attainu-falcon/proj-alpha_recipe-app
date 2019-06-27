@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Login Works");
+  res.render("login", {
+    style: "login"
+  });
 });
 module.exports = router;

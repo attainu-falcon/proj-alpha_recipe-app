@@ -109,7 +109,7 @@
                 <div class="racipe-cata">
                     <span style="color:white">For Begginers</span>
                 </div>
-                <h2>Lamb Chops with green peper sauce</h2>
+                <h2 style="color:black;">{{this.title}}</h2>
                 <div class="recipe-date">May 15, 2018</div>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -124,102 +124,80 @@
                     <div class="recipe-filter-warp">
                         <div class="filter-top">
                             <div class="filter-top-text">
-                                <p>Prep: 15 mins</p>
-                                <p>Cook: 30 mins</p>
-                                <p>Yields: 8 Servings</p>
+                                {{#each recipes}}
+                                <p>{{this.totalTime}}</p>
+                                <p>{{this.cookingTime}}</p>
+                                <p>{{this.serving}}</p>
                             </div>
                         </div>
+
                         <!-- recipe filter form -->
+
                         <div class="filter-form-warp">
-                            <h2>Ingredients</h2>
+                            <h2></h2>
                             <form class="filter-form">
                                 <div class="check-warp">
                                     <input type="checkbox" id="one" />
-                                    <label for="one">4 Tbsp (57 gr) butter</label>
+                                    <label for="one"></label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="two" />
-                                    <label for="two">2 large eggs</label>
+                                    <label for="two"></label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="three" />
-                                    <label for="three">2 yogurt containers granulated sugar</label>
+                                    <label for="three"> </label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="four" />
-                                    <label for="four">1 vanilla or plain yogurt, 170g container</label>
+                                    <label for="four"></label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="five" />
-                                    <label for="five">White flour</label>
+                                    <label for="five"></label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="six" />
-                                    <label for="six">1.5 yogurt containers milk</label>
+                                    <label for="six"></label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="seven" />
-                                    <label for="seven">1/4 tsp cinnamon</label>
+                                    <label for="seven"></label>
                                 </div>
                                 <div class="check-warp">
                                     <input type="checkbox" id="eight" />
-                                    <label for="eight">1 cup fresh blueberries </label>
+                                    <label for="eight"></label>
                                 </div>
                             </form>
                         </div>
                     </div>
+
                 </div>
+
                 <div class="col-lg-7">
                     <ul class="recipe-info-list">
                         <li>
-                            <h2>01.</h2>
+
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
-                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras
-                                a tortor enim. Phasellus posuere vestibulum ipsum, eget
-                                lobortis purus. Orci varius natoque penatibus et magni.
+                                {{this.description}}
                             </p>
                         </li>
                         <li>
-                            <h2>02.</h2>
-                            <p>
-                                Sit amet, consectetur adipiscing elit. Vestibulum nec varius
-                                dui. Suspendisse potenti. Vestibulum ac pellentesque tortor.
-                                Aenean congue sed metus in iaculis. Cras a tortor enim.
-                                Phasellus posuere vestibulum ipsum, eget lobortis purus.
-                            </p>
+
+
                         </li>
                         <li>
-                            <h2>03.</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
-                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras
-                                a tortor enim. Phasellus posuere vestibulum ipsum
-                            </p>
+
                         </li>
                         <li>
-                            <h2>04.</h2>
-                            <p>
-                                Sit amet, consectetur adipiscing elit. Vestibulum nec varius
-                                dui. Suspendisse potenti. Vestibulum ac pellentesque tortor.
-                                Aenean congue sed metus in iaculis. Cras a tortor enim.
-                                Phasellus posuere vestibulum ipsum, eget lobortis.
-                            </p>
+
                         </li>
                         <li>
-                            <h2>05.</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
-                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras
-                                a tortor enim. Phasellus posuere vestibulum ipsum, eget
-                                lobortis purus. Orci varius natoque penatibus et magni.
-                            </p>
+
                         </li>
                     </ul>
                 </div>
+                {{/each}}
             </div>
         </div>
     </section>
