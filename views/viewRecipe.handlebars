@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/c9ec4f82cc.js"></script>
-    <link rel="stylesheet" href="/css/{{style}}.css" />
+    {{!--
+    <link rel="stylesheet" href="/css/{{style}}.css" /> --}}
 </head>
 
 <body>
@@ -120,17 +121,24 @@
                 </div>
             </div>
             <div class="row">
+
                 <div class="col-lg-5">
                     <div class="recipe-filter-warp">
                         <div class="filter-top">
                             <div class="filter-top-text">
                                 {{#each recipes}}
-                                <p>{{this.totalTime}}</p>
+                                <p>
+                                    {{this.totalTim}}</p>
                                 <p>{{this.cookingTime}}</p>
                                 <p>{{this.serving}}</p>
                             </div>
                         </div>
-
+                        {{this.description}}
+                        {{this.title}}
+                        {{this.description}}
+                        {{this.serving}}
+                        {{this.cuisine}}
+                        {{/each}}
                         <!-- recipe filter form -->
 
                         <div class="filter-form-warp">
@@ -197,7 +205,7 @@
                         </li>
                     </ul>
                 </div>
-                {{/each}}
+
             </div>
         </div>
     </section>

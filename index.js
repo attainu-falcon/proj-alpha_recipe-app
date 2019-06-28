@@ -9,7 +9,7 @@ var url =
 MongoClient.connect(url, (err, client) => {
   if (err) throw err;
   app.locals.db = client.db("Deliciously"); // whatever your database name is
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`sever running on ${PORT}`);
   });
@@ -22,4 +22,4 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", require("./home"));
 app.use("/add", require("./addRecipe"));
 app.use("/login", require("./login"));
-app.use("/recipe", require("./viewRecipe"));
+app.use("/recipe/:id", require("./viewRecipe"));

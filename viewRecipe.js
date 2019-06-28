@@ -3,8 +3,9 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   var db = req.app.locals.db;
+  var id = req.query.id;
   db.collection("recipes")
-    .findOne({ recipeId: "01" })
+    .find({ recipeId: "id" })
     .toArray((err, result) => {
       if (err) return console.log(err);
 
