@@ -4,25 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+ "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
     "dev": "nodemon index"
-  },
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/attainu-falcon/proj-alpha_recipe-app.git"
   },
-  "author": "Shakti Pradhan",
-  "license": "ISC",
+"author": "Shakti Pradhan",
+
+"license": "ISC",
   "bugs": {
     "url": "https://github.com/attainu-falcon/proj-alpha_recipe-app/issues"
   },
+
   "homepage": "https://github.com/attainu-falcon/proj-alpha_recipe-app#readme",
+
   "dependencies": {
-    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "handlebars": "^4.1.2",
     "mongodb": "^3.2.7"
   }
 }
+
