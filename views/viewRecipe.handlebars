@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/c9ec4f82cc.js"></script>
+
     <link rel="stylesheet" href="/css/{{style}}.css" />
 </head>
 
@@ -224,39 +225,65 @@
         </div>
     </section>
     <!-- Recipe details section end -->
-
+        <section class="recipes-section spad pt-0"></section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Comments</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe">
+                        {{#each recipes}}
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">{{this.review}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- Review section -->
     <section class="comment-section spad pt-0">
         <div class="container">
             <h4>
                 Write a review
             </h4>
-
             <form class="comment-form">
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- <input type="text" placeholder="Rate" /> -->
-                        <div class="rating my-3">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star is-fade"></i>
-                        </div>
+                         {{!-- <input type="text" placeholder="Rate" /> --}}
+                    
                     </div>
-                    <!-- <div class="col-md-6">
-              <input type="text" placeholder="E-mail" />
-            </div> -->
+            <form class="form-signin" action="/recipe" method="POST">
                     <div class="col-md-12">
-                        <input type="text" placeholder="Title" />
-                        <textarea placeholder="Review"></textarea>
-                        <button class="site-btn">Submit</button>
+                        <div class="stars">{{this.rating}}
+                            <input type="radio" style="background-color:blue;" name="star" class="star-1" id="star-1" />
+                            <label class="star-1" for="star-1">1</label>
+                            <input type="radio" name="star" class="star-2" id="star-2" />
+                            <label class="star-2" for="star-2">2</label>
+                            <input type="radio" name="star" class="star-3" id="star-3" />
+                            <label class="star-3" for="star-3">3</label>
+                            <input type="radio" name="star" class="star-4" id="star-4" />
+                            <label class="star-4" for="star-4">4</label>
+                            <input type="radio" name="star" class="star-5" id="star-5" />
+                            <label class="star-5" for="star-5">5</label>
+                            <span></span>    
+                        </div>
+                        <br><br>
+                        <textarea placeholder="Review" name="review">{{this.review}}</textarea>
+                        <input class="site-btn" type="submit" value="submit">
+                        </form>
                     </div>
                 </div>
             </form>
         </div>
     </section>
     <!-- Review section -->
+
+	
 
     <!-- Footer section  -->
     <footer class="footer-section set-bg" id="footer" data-setbg="">
@@ -281,7 +308,7 @@
                         <li><a href="#">Gallery</a></li>
                     </ul>
                     <p class="copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                
                         Copyright &copy; All rights reserved |Made by Alpha
                     </p>
                 </div>
@@ -290,7 +317,6 @@
     </footer>
     <!-- Footer section end -->
 
-    <!--====== Javascripts & Jquery ======-->
 </body>
 
 </html>

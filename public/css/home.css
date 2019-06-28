@@ -1,0 +1,341 @@
+/*----------------------------------------*/
+/* CSS
+/*----------------------------------------*/
+
+
+html,
+body {
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 500;
+	color: #474747;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 14.1px;
+	color: #838383;
+	line-height: 2.1;
+}
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+/*---------------------
+	SECTION CSS
+-----------------------*/
+
+.section-title {
+	margin-bottom: 48px;
+	position: relative;
+	padding-top: 18px;
+}
+
+.section-title:after {
+	position: absolute;
+	content: "";
+	width: 56px;
+	height: 5px;
+	left: 0;
+	top: 0;
+	background: #000000;
+	-webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.section-title h2,
+.section-title h3 {
+	font-weight: 700;
+}
+
+.set-bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+.spad {
+	padding-top: 96px;
+	padding-bottom: 96px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+	color: #fff;
+}
+
+.rating i {
+	color: #fbb710;
+}
+
+.rating .is-fade {
+	color: #e0e3e4;
+}
+
+/*------------------
+  Header section
+---------------------*/
+
+.header-section {
+	clear: both;
+}
+
+.header-top {
+	background: #333;
+	overflow: hidden;
+	padding: 18px 0;
+	height: 65px;
+}
+
+.header-social {
+	float: left;
+	padding: 5px;
+}
+
+.header-social a {
+	color: #fff;
+	margin-right: 35px;
+}
+
+.user-panel {
+	float: right;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.user-panel a {
+	color: #fff;
+}
+
+.header-bottom {
+	padding: 38px 0;
+	position: relative;
+}
+
+.site-logo {
+	display: inline-block;
+}
+
+.nav-switch {
+	display: none;
+}
+
+.main-menu,
+.footer-menu {
+	list-style: none;
+	float: right;
+	margin-right: 160px;
+}
+
+.main-menu li,
+.footer-menu li {
+	display: inline;
+}
+
+.main-menu li a,
+.footer-menu li a {
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 500;
+	color: #474747;
+	padding: 25px 20px;
+}
+
+.main-menu li a:hover,
+.footer-menu li a:hover {
+	color: #ff9100;
+}
+
+/*------------------
+  Recipes Section
+---------------------*/
+
+.recipes-section .container {
+	margin-bottom: -30px;
+}
+
+.recipe {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.recipe .recipe-info-warp {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding-right: 80px;
+	overflow: hidden;
+}
+
+.recipe .recipe-info {
+	padding: 17px 25px 15px;
+	background: #000000;
+	position: relative;
+}
+
+.recipe .recipe-info:after {
+	position: absolute;
+	content: "";
+	width: 53px;
+	height: calc(100% + 40px);
+	right: -27px;
+	bottom: 0;
+	background: #000000;
+	-webkit-transform: rotate(27deg);
+	    -ms-transform: rotate(27deg);
+	        transform: rotate(27deg);
+}
+
+.recipe .recipe-info h3 {
+	font-size: 15px;
+	color: #fff;
+}
+
+.recipe .rating i {
+	font-size: 11px;
+}
+
+/*----------------------
+  Bottom widget Section
+------------------------*/
+
+.bottom-widgets-section {
+	background: #f4f7fb;
+}
+
+.sp-recipes-list {
+	list-style: none;
+}
+
+.sp-recipes-list li {
+	margin-bottom: 22px;
+}
+
+.sp-recipes-list .rl-thumb {
+	width: 77px;
+	height: 77px;
+	float: left;
+}
+
+.sp-recipes-list .rl-info {
+	padding-left: 90px;
+}
+
+.sp-recipes-list .rl-info span {
+	font-size: 12px;
+	font-weight: 500;
+	color: #fdc50d;
+}
+
+.sp-recipes-list .rl-info h6 {
+	margin-bottom: 12px;
+	padding-top: 2px;
+}
+
+.sp-recipes-list .rl-info .rating {
+	font-size: 12px;
+}
+
+/*------------------
+  Footer Section
+---------------------*/
+
+.footer-section {
+	padding: 60px 70px 50px;
+}
+
+.footer-social {
+	margin-top: 25px;
+}
+
+.footer-social a {
+	color: #b8b8b8;
+	font-size: 14px;
+	margin-right: 30px;
+}
+
+.footer-social a:hover {
+	color: #ff8b06;
+}
+
+.footer-menu {
+	float: none;
+	margin-right: 0;
+}
+
+.footer-menu li a {
+	padding: 20px 15px;
+}
+
+.footer-menu li:last-child a {
+	padding-right: 0;
+}
+
+.copyright {
+	margin-bottom: 0;
+	padding-top: 10px;
+}
