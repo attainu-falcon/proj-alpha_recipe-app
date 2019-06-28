@@ -5,10 +5,12 @@ const MongoClient = require("mongodb").MongoClient;
 var objectId = require("mongodb").ObjectID;
 var db;
 var url =
+  process.env.MY_DB ||
   "mongodb+srv://nikku:nikku1234@cluster0-rbeul.mongodb.net/test?retryWrites=true&w=majority";
+console.log(url);
 MongoClient.connect(url, (err, client) => {
   if (err) throw err;
-  app.locals.db = client.db("Deliciously"); // whatever your database name is
+  app.locals.db = client.db("Deliciously");
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`sever running on ${PORT}`);
