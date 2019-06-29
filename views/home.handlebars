@@ -1,116 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    
+    <title>Welcome to the register</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand" href="#">Deliciously</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-<head>
-    <title>Recipe App</title>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="food, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">My Collection</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Recipes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Logout</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/black-bean-close-up-cooked-1640774.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/brooke-lark-275181-unsplash.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <section class="container-fluid">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/public/css/home.css" />
-	<link rel="stylesheet" href="/public/css/font-awesome.min.css" />
-
-
-</head>s
-
-<body>
-
-    <!-- Header section -->
-    <header class="header-section">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-social">
-
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-
-                </div>
-                <a href="#">Register</a> /
-                <a href="#">Login</a>
+  <div class="row myx-4">
+    <div class="col-12 mt-4">
+        <h1 class="large text-danger"> Latest Recipes</h1>
+    </div>
+  </div>
+     
+  
+  <div class="row">
+      <div class="col-md-12">
+      <div class="card-deck " >
+          <div class="card text-left" id="card-deck">
+              <img class="card-img-top round-image" src="/assets/instagram/1.jpg"
+              alt=""
+             >
+              <div class="card-body">
+                <h4 class="card-title">Pizza</h4>
+                <p class="card-text">  <div>
+              
+                    <p>Description</p>
+                
+                    <a href="profile.html" class="btn btn-primary">View Recipe</a>
+                  </div></p>
+    
+             
+              </div>
             </div>
-        </div>
-        </div>
-        <div class="header-bottom">
-            <div class="container">
-                <a href="index.html" class="site-logo">
-                    <img src="img/logo.png" alt="">
-                </a>
-                <div class="nav-switch">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <ul class="main-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Features</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+        <div class="card text-left">
+            <img class="card-img-top round-image" src="/assets/instagram/1.jpg"
+            alt=""
+           >
+            <div class="card-body">
+              <h4 class="card-title">Pizza</h4>
+              <p class="card-text">  <div>
+            
+                  <p>Description</p>
+              
+                  <a href="profile.html" class="btn btn-primary">View Recipe</a>
+                </div></p>
+  
+           
             </div>
-        </div>
-    </header>
-    <!-- Header section end -->
-
-
-
-    <section class="recipes-section spad pt-0">
-        <div class="container">
-            <div class="section-title">
-                <h2>Latest recipes</h2>
+          </div>
+        <div class="card text-left">
+            <img class="card-img-top round-image" src="/assets/instagram/1.jpg"
+            alt=""
+           >
+            <div class="card-body">
+              <h4 class="card-title">Pizza</h4>
+              <p class="card-text">  <div>
+            
+                  <p>Description</p>
+              
+                  <a href="profile.html" class="btn btn-primary">View Recipe</a>
+                </div></p>
+  
+           
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="recipe">
+          </div>
+        <div class="card text-left">
+          <img class="card-img-top round-image" src="/assets/instagram/1.jpg"
+          alt=""
+         >
+          <div class="card-body">
+            <h4 class="card-title">Pizza</h4>
+            <p class="card-text">  <div>
+          
+                <p>Description</p>
+            
+                <a href="profile.html" class="btn btn-primary">View Recipe</a>
+              </div></p>
 
-
-                        {{#each recipes }}
-                        <div class="card">
-                            <img class="card-img-top" src="" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">{{this.title}}</h5>
-                                <p class="card-text">
-                                    {{this.description}}
-                                </p>
-                            </div>
-                        </div>
-
-                        {{/each}}
-
-                        {{!-- <img src="" alt="">
-                        <div class="recipe-info-warp">
-                            <div class="recipe-info"> --}}
-                                {{!-- <h3>Traditional Pizza</h3> --}}
-                                {{!-- <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star is-fade"></i>
-                                </div> --}}
-
-                                {{!-- </div> --}}
-                            {{!--
-                        </div> --}}
-
-
-                    </div>
-                </div>
-            </div>
+         
+          </div>
         </div>
-
-
+      </div>
+    </div>
+  </div>     
+      
+    </div>
+    </div>
+    </div>
     </section>
-
-
-
-
-
-
-</body>
-
+  </body>
 </html>

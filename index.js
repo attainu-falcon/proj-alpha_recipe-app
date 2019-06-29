@@ -4,10 +4,10 @@ const exphbs = require("express-handlebars");
 const MongoClient = require("mongodb").MongoClient;
 var objectId = require("mongodb").ObjectID;
 var db;
-var url = "mongodb+srv://ameykulkarni10:mumbaipune101994@deliciously-t4qaw.mongodb.net/test?retryWrites=true&w=majority";
+var url = "mongodb+srv://amey:amey1234@cluster0-rbeul.mongodb.net/test?retryWrites=true&w=majority";
 MongoClient.connect(url, (err, client) => {
   if (err) throw err;
-  app.locals.db = client.db("rating"); // whatever your database name is
+  app.locals.db = client.db("Deliciously"); // whatever your database name is
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`sever running on ${PORT}`);

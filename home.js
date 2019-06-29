@@ -9,7 +9,9 @@ router.get("/", (req, res) => {
       if (err) return console.log(err);
 
       console.log(result);
-      res.render("home", { recipes: result });
+      res.render("home", {
+      recipes: result
+       });
     });
 });
 module.exports = router;
