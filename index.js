@@ -4,7 +4,7 @@ const exphbs = require("express-handlebars");
 const MongoClient = require("mongodb").MongoClient;
 var objectId = require("mongodb").ObjectID;
 var db;
-var url = "mongodb+srv://amey:amey1234@cluster0-rbeul.mongodb.net/test?retryWrites=true&w=majority";
+var url = "mongodb+srv://nikku:nikku1234@cluster0-rbeul.mongodb.net/test?retryWrites=true&w=majority";
 MongoClient.connect(url, (err, client) => {
   if (err) throw err;
   app.locals.db = client.db("Deliciously"); // whatever your database name is
