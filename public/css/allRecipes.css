@@ -88,28 +88,22 @@ body {
   color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: #17a2b8;
+.card:hover {
+  background-color: lightslategray;
+  color: white;
+}
+.page-top-section {
+  text-align: center;
 }
 
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-}
-
-.landing {
-  position: relative;
-  background: url("../../images/showcase.jpg") no-repeat center center/cover;
-  height: 100vh;
-}
-
-#recipe-image {
-  max-width: 500px;
-  max-height: 500px;
+.page-top-section h2 {
+  font-size: 72px;
+  display: inline-block;
+  font-weight: 700;
+  color: white;
+  padding: 1px 1px;
+  margin: 56px 0;
+  border-radius: 4px;
 }
 #addBtn:hover {
   color: red;

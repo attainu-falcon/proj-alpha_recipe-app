@@ -3,73 +3,14 @@
 }
 html,
 body {
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: white;
+  color: #333;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: 500;
-  color: #474747;
-}
-
-h1 {
-  font-size: 70px;
-}
-
-h2 {
-  font-size: 36px;
-}
-
-h3 {
-  font-size: 30px;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 18px;
-}
-
-h6 {
-  font-size: 16px;
-}
-
-p {
-  font-size: 14.1px;
-  color: #838383;
-  line-height: 2.1;
-}
-
-img {
-  max-width: 100%;
-}
-
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
-  outline: none;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-  outline: none;
-}
-
-ul,
-ol {
-  padding: 0;
-  margin: 0;
+#addBtn:hover {
+  color: red;
 }
 .section-title {
   margin-bottom: 48px;
@@ -92,17 +33,6 @@ ol {
 .section-title h2,
 .section-title h3 {
   font-weight: 700;
-}
-
-.set-bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-}
-
-.spad {
-  padding-top: 96px;
-  padding-bottom: 96px;
 }
 
 .text-white h1,

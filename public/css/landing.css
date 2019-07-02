@@ -1,0 +1,81 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  background: url("/assets/latest12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+}
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.landing {
+  position: relative;
+}
+
+.landing-inner {
+  color: white;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#recipe-image {
+  max-width: 500px;
+  max-height: 500px;
+}
+.parent {
+  min-height: 100vh;
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  height: 490px;
+  width: 450px;
+  padding: 10px;
+  border-radius: 30px;
+}
