@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+var userName = "Neyanta";
 router.get("/", (req, res) => {
   res.render("addRecipe", {
     style: "addRecipe"
@@ -22,7 +22,8 @@ router.post("/", (req, res) => {
     ingredients: {
       quantity: req.body.quantity,
       item: req.body.item
-    }
+    },
+    user: userName
   };
 
   db.collection("recipes").insert(newRecipe, (err, result) => {

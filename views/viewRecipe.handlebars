@@ -66,7 +66,11 @@
                     <h1 class="
                         large text-light">{{this.title}}</h1>
                     <p class="lead text-light">{{this.title}}</p>
-                   <a href="/myCollection" class="btn btn-primary text-center">Add to my collection</a>
+                    <form action="/collection" method="POST">
+                    <input type="hidden" name="user" value="{{this.user}}">
+                    <input type="hidden" name="recipeId" value="{{this._id}}">
+                   <button class="btn btn-primary text-center">Add to my collection</button>
+                   </form>
                 </div>
             </div>
            
