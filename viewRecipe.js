@@ -1,31 +1,31 @@
 const express = require("express");
+const Rating = require('rating');
 const router = express.Router();
-var objectId = require("mongodb").ObjectID;
+var ObjectId = require("mongodb").ObjectID;
+
+var recipeId;
 router.get("/:id", (req, res) => {
   var db = req.app.locals.db;
-  var id = req.params.id;
-  var recipes;
-  db.collection("recipes")
-    .find({ recipeId: id })
+  var rating;
+  recipeId = req.params.id;
+  db.collection("userRating")
+    .find({ recId: recipeId })
     .toArray((err, result) => {
       if (err) return console.log(err);
-       recipes=result;
-     
+      rating = result;
     });
-      db.collection("userRating")
-    .find({ recipeId: id })
+  db.collection("recipes")
+    .find({ _id: ObjectId(req.params.id) })
     .toArray((err, result) => {
       if (err) return console.log(err);
-      // var data=result;
-      
-     
-      res.render("viewRecipe",{
+
+      res.render("viewRecipe", {
         style: "viewRecipe",
-        data:result,
-        recipes:recipes
+        recipe: result,
+        rating: rating
+        
       });
-   
-});
+    });
 });
 
 // POST METHOD
@@ -33,15 +33,17 @@ router.post("/", (req, res) => {
   var db = req.app.locals.db;
   const newReview = {
     title: req.body.title,
-    rating: req.body.rating
+    review: req.body.review,
+    rating: req.body.star,
+
+    recId: recipeId
+
   };
-  if (newReview || !newReview) {
-    return res.status(400).json({ msg: "cannot post empty form" });
-  };
+  console.log(req.body.rating);
   db.collection("userRating").insert(newReview, (err, result) => {
-    if (err) throw err;
+    if (err) throw (err);
     console.log(result);
-    res.render("recipe");
+    res.redirect("/recipe/" + recipeId);
   });
 });
 
