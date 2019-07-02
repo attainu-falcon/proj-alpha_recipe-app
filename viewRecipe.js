@@ -1,19 +1,45 @@
 const express = require("express");
 const router = express.Router();
+var ObjectId = require("mongodb").ObjectID;
 
-router.get("/", (req, res) => {
+var recipeId;
+router.get("/:id", (req, res) => {
   var db = req.app.locals.db;
-  var id = req.query.id;
+  var rating;
+  recipeId = req.params.id;
+  db.collection("userRating")
+    .find({ recId: recipeId })
+    .toArray((err, result) => {
+      if (err) return console.log(err);
+      rating = result;
+    });
   db.collection("recipes")
-    .find({ recipeId: "id" })
+    .find({ _id: ObjectId(req.params.id) })
     .toArray((err, result) => {
       if (err) return console.log(err);
 
-      console.log(result);
       res.render("viewRecipe", {
         style: "viewRecipe",
-        recipes: result
+        recipe: result,
+        rating: rating
       });
     });
 });
+
+// POST METHOD
+router.post("/", (req, res) => {
+  var db = req.app.locals.db;
+  const newReview = {
+    title: req.body.title,
+    review: req.body.review,
+    recId: recipeId
+  };
+
+  db.collection("userRating").insert(newReview, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.redirect("/recipe/" + recipeId);
+  });
+});
+
 module.exports = router;

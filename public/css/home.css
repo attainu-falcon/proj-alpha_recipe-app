@@ -88,28 +88,9 @@ body {
   color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: #17a2b8;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-}
-
-.landing {
-  position: relative;
-  background: url("../../images/showcase.jpg") no-repeat center center/cover;
-  height: 100vh;
-}
-
-#recipe-image {
-  max-width: 500px;
-  max-height: 500px;
+.card:hover {
+  background-color: lightslategray;
+  color: white;
 }
 #addBtn:hover {
   color: red;

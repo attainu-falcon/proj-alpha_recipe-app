@@ -6,11 +6,10 @@
   align-items: center;
 }
 .card {
-  height: 430px;
-  width: 400px;
+  height: 490px;
+  width: 450px;
   padding: 10px;
   border-radius: 30px;
-  box-shadow: 10px 10px BLACK;
 }
 
 .card-body {
@@ -45,4 +44,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
+}
+.card {
+  box-shadow: 10px 10px black;
 }
