@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/{{style}}.css" />
+    <title>SignUp</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="parent dark-overlay">
+            <div class="card">
+                <h5 class="card-title text-center m-3">SIGNUP</h5>
+                <form class="" name="myform" action="/signup" method="POST">
+                    <div class="card-body ">
+
+                        <label>FullName</label>
+
+                        <div class="form-group ">
+                            <input type="text" class="form-control form-control-lg " id="fullname" name="fullname" />
+                        </div>
+                        <br />
+                        <label>Username</label>
+                        <div class="form-group ">
+                            <input type="text" class="form-control form-control-lg" id="password" name="username"/>
+                        </div>
+                        <label>Password</label>
+                        <div class="form-group ">
+                            <input type="password" class="form-control form-control-lg" id="password" name="password" />
+                        </div>
+                        {{!-- <div class="form-group text-center"> --}}
+                            {{!-- <a href="/login" class="btn btn-lg btn-danger m-2 " id="myBtn">SignUp</a> --}}
+                             
+                            <input
+                            type="submit"
+                            class="btn btn-danger btn-block text-center"
+                            value="SignUp"
+                            />               
+                            <br>
+                            Already have an account <a href="/login" class="">Login</a> here.
+                        {{!-- </div> --}}
+                </form>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

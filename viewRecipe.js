@@ -23,7 +23,10 @@ router.get("/:id", (req, res) => {
         style: "viewRecipe",
         recipe: result,
         rating: rating
+<<<<<<< HEAD
         
+=======
+>>>>>>> 35ddea287d415139dd18cb354a610653fca91b14
       });
     });
 });
@@ -34,6 +37,7 @@ router.post("/", (req, res) => {
   const newReview = {
     title: req.body.title,
     review: req.body.review,
+<<<<<<< HEAD
     rating: req.body.star,
 
     recId: recipeId
@@ -42,9 +46,20 @@ router.post("/", (req, res) => {
   console.log(req.body.rating);
   db.collection("userRating").insert(newReview, (err, result) => {
     if (err) throw (err);
+=======
+    recId: recipeId
+  };
+
+  db.collection("userRating").insert(newReview, (err, result) => {
+    if (err) throw err;
+>>>>>>> 35ddea287d415139dd18cb354a610653fca91b14
     console.log(result);
     res.redirect("/recipe/" + recipeId);
   });
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 35ddea287d415139dd18cb354a610653fca91b14

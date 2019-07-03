@@ -21,17 +21,14 @@ router.post("/", (req, res) => {
     recipetype: req.body.recipetype,
     ingredients: {
       quantity: req.body.quantity,
-      measure: req.body.measure,
       item: req.body.item
     }
   };
-  if (!newRecipe || !newRecipe) {
-    return res.status(400).json({ msg: "cannot post empty form" });
-  }
+
   db.collection("recipes").insert(newRecipe, (err, result) => {
     if (err) throw err;
     console.log(result);
-    res.send("updated");
+    res.redirect("home");
   });
 });
 module.exports = router;
