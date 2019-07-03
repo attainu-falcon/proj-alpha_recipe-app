@@ -32,6 +32,7 @@ router.post("/", (req, res) => {
   const newReview = {
     title: req.body.title,
     review: req.body.review,
+    rating: req.body.star,
     recId: recipeId
   };
 
