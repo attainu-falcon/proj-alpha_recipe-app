@@ -13,14 +13,8 @@ router.get("/", (req, res) => {
       if (err) return console.log(err);
 
       console.log(result);
-<<<<<<< HEAD
-      res.render("home", {
-      recipes: result
-       });
-=======
       console.log(recipeId);
       res.render("home", { recipes: result, style: "home" });
->>>>>>> 35ddea287d415139dd18cb354a610653fca91b14
     });
 });
 module.exports = router;
