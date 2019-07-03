@@ -23,8 +23,8 @@
 // $('li[id*="rating"]').text()
 
 var n=document.querySelector("#rating8").innerText;
-for (let i=n;i>=1; i--){
+for (let i=n; i>=1; i--){
       document.querySelector("#output8").innerHTML +='*';
       // output.push('<i class= "fa fa-star" aria-hidden="true" style="color:gold:"></i>&nbsp;');
-      console.log("For empty stars",i);
     }
+    console.log("For empty stars",i);
