@@ -5,10 +5,14 @@ const MongoClient = require("mongodb").MongoClient;
 
 var objectId = require("mongodb").ObjectID;
 var db;
+<<<<<<< HEAD
+var url = "mongodb+srv://nikku:nikku1234@cluster0-rbeul.mongodb.net/test?retryWrites=true&w=majority";
+=======
 var url =
   process.env.MY_DB ||
   "mongodb+srv://nikku:nikku1234@cluster0-rbeul.mongodb.net/test?retryWrites=true&w=majority";
 console.log(url);
+>>>>>>> 35ddea287d415139dd18cb354a610653fca91b14
 MongoClient.connect(url, (err, client) => {
   if (err) throw err;
   app.locals.db = client.db("Deliciously");

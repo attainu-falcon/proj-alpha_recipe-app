@@ -4,28 +4,38 @@
   "description": "recipeapp",
   "main": "index.js",
   "scripts": {
- "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
     "dev": "nodemon index"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/attainu-falcon/proj-alpha_recipe-app.git"
   },
+<<<<<<< HEAD
+  "author": "Shakti Pradhan",
+  "license": "ISC",
+=======
 
 
+>>>>>>> 35ddea287d415139dd18cb354a610653fca91b14
   "bugs": {
     "url": "https://github.com/attainu-falcon/proj-alpha_recipe-app/issues"
   },
-
   "homepage": "https://github.com/attainu-falcon/proj-alpha_recipe-app#readme",
-
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "ember-star-rating": "^2.0.4",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+<<<<<<< HEAD
+    "handlebars": "^4.1.2",
+    "mongodb": "^3.2.7",
+    "rating": "^0.1.0"
+=======
     "express-session": "^1.16.2",
     "mongodb": "^3.2.7",
     "multer": "^1.4.1"
+>>>>>>> 35ddea287d415139dd18cb354a610653fca91b14
   }
 }
-
