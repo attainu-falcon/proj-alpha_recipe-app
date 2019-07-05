@@ -1,12 +1,27 @@
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
 const express = require("express");
 const router = express.Router();
-var userName = "Neyanta";
+const upload = multer({ dest: "public/assets" });
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+});
+
 router.get("/", (req, res) => {
   res.render("addRecipe", {
     style: "addRecipe"
   });
 });
-router.post("/", (req, res) => {
+
+router.post("/", upload.single("image"), async (req, res) => {
+  const result = await cloudinary.uploader.upload(req.file.path, {
+    width: 400,
+    height: 300
+  });
+  console.log(result);
   var db = req.app.locals.db;
   const newRecipe = {
     title: req.body.title,
@@ -23,7 +38,8 @@ router.post("/", (req, res) => {
       quantity: req.body.quantity,
       item: req.body.item
     },
-    user: userName
+    image: result.secure_url,
+    user: req.app.locals.username
   };
 
   db.collection("recipes").insert(newRecipe, (err, result) => {

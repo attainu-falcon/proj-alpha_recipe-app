@@ -82,14 +82,14 @@
     </section>
     <!-- Hero section end -->
     <!-- ADD FORM -->
-    <form class=" pt-5 my-5 mx-5  p-4" method="POST" action="/add" id="form" style="background-color:lightgrey">
+    <form class=" pt-5 my-5 mx-5  p-4" method="POST" action="/add" id="form" style="background-color:lightgrey" enctype="multipart/form-data">
       <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
         <input
           type="text"
           class="form-control"
           id="exampleInputEmail1"
-          name="title"
+          name="title" required
         />
       </div>
       <div class="form-group">
@@ -112,7 +112,7 @@
               type="text"
               class="form-control"
               id="exampleInputEmail1"
-              name="recipetype"
+              name="recipetype" required
             />
           </div>
           <div class="col-4">
@@ -121,7 +121,7 @@
               type="text"
               class="form-control"
               id="exampleInputEmail1"
-              name="cuisine"
+              name="cuisine" required
             />
           </div>
           <div class="col-4">
@@ -144,7 +144,7 @@
           type="number"
           class="form-control"
           id="exampleInputEmail1"
-          name="serving"
+          name="serving" required
         />
       </div>
       Ingredients
@@ -207,7 +207,7 @@
                 type="text"
                 class="form-control"
                 id="exampleInputEmail1"
-                name="quantity"
+                name="quantity" 
               />
             </td>
           
@@ -216,7 +216,7 @@
                 type="text"
                 class="form-control"
                 id="exampleInputEmail1"
-                name="item"
+                name="item" required
               />
             </td>
           </tr>
@@ -234,7 +234,7 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   placeholder="hours"
-                  name="totaltime"
+                  name="totaltime" required
                 />
               </div>
             </div>
@@ -251,7 +251,7 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   placeholder="hours"
-                  name="cookingtime"
+                  name="cookingtime" required
                 />
               </div>
             </div>
@@ -268,7 +268,7 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   placeholder="hours"
-                  name="preptime"
+                  name="preptime" required
                 />
               </div>
             </div>
@@ -284,7 +284,7 @@
           rows="8"
           id="exampleInputPassword1"
           placeholder=""
-          name="instructionsteps"
+          name="instructionsteps" required
         ></textarea>
       </div>
       <div class="form-group">
@@ -293,6 +293,7 @@
           type="file"
           class="form-control-file"
           id="exampleFormControlFile1"
+          name="image" required
         />
       </div>
       {{!--
@@ -308,7 +309,7 @@
       <input
         type="submit"
         class="btn btn-danger btn-block text-center"
-        value="Add a Recipe"
+        value="Add a Recipe" 
       />
     </form>
     <!-- ADD FORM END -->

@@ -69,24 +69,16 @@
         </ul>
       </div>
     </nav>
-    {{!-- <section class="page-top-section  card">
+    <section class="page-top-section  card">
       <img src="./assets/page-top-bg.jpg" alt="" />
       <div class="container">
         <h2 class="card-img-overlay">
-          All Recipes
+          Collection
         </h2>
-      </div>
-    </section>
-    <section class="container-fluid">
-      <div class="row myx-4">
-        <div class="col-12 mt-4">
-          {{!--
-          <h1 class="large text-danger my-2">Recipes</h1>
-          --}}
-        </div>
-      </div>
-      <div class="row">
-        {{#each recipes}}
+      </div> 
+    </section> 
+<div class="row">
+        {{#each collection}}
         <div class="col-md-3">
           <div class="card text-left mb-5" id="card-deck">
             <img
@@ -100,8 +92,8 @@
               <div>
                 <p>{{ this.description }}</p>
 
-                <a href="/recipe/{{ this._id }}" class="btn btn-danger"
-                  >View Recipe</a
+                <a href="/recipe/{{ this.recId }}" class="btn btn-danger"
+                 >View Recipe</a
                 >
               </div>
             </div>
@@ -110,9 +102,6 @@
 
         {{/each}}
       </div>
-    </section> --}}
-
-
-    <div><h1></h1></div>
+    </div>
   </body>
 </html>
