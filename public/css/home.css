@@ -21,24 +21,16 @@
   margin: 1.5rem 0;
 }
 
-.dark-overlay {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-/* .card-img-top {
+.card-img-top {
   height: 320px;
-} */
+}
 .card {
-  /* height: 498px; */
+  height: 550px;
   min-width: 320px;
 }
 #description {
-  max-height: 80px;
-  overflow: scroll;
+  max-height: 70px;
+  overflow: auto;
 }
 * {
   -webkit-box-sizing: border-box;

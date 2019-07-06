@@ -85,26 +85,29 @@
         </div>
       </div>
       
-      <div class="card-deck"> 
+      <div class="row"> 
         {{#each recipes}}
-       {{!-- <div class="col-md-3 col-sm-6"> --}}
+       <div class="col-md-3 col-sm-6">
           <div class="card text-left mb-4" id="card-deck">
             <img
               class="card-img-top round-image"
               src="{{this.image}}"
               alt=""
+             
             />
+          
             <div class="card-body text-center">
               <h4 class="card-title">{{ this.title }}</h4>
               <p class="card-text"  id="description"> {{ this.description }}</p>
              
- 
+
             </div>
-            <p class="text-center"> <a href="/recipe/{{ this._id }}" class="btn btn-danger mb-2 hvr-curl-top-left"
+                <p class="text-center" id="viewButton"> <a href="/recipe/{{ this._id }}" class="btn btn-danger mb-2 hvr-curl-top-left"
                   >View Recipe</a
                 ></p>
           </div>
-        {{!-- </div> --}}
+          
+        </div>
 
         {{/each}}
       </div>
