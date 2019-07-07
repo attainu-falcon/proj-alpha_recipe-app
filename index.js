@@ -12,7 +12,7 @@ console.log(url);
 MongoClient.connect(url, (err, client) => {
   if (err) throw err;
   app.locals.db = client.db("Deliciously");
-  const PORT = process.env.PORT || 3000;
+  const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`sever running on ${PORT}`);
   });
@@ -28,7 +28,6 @@ app.use("/", require("./landing"));
 app.use("/signup", require("./signUp"));
 app.use("/login", require("./login"));
 app.use("/reset", require("./reset"));
-
 app.use("/recipe", require("./viewRecipe"));
 app.use("/recipes", require("./allRecipes"));
 app.use("/collection", require("./myCollection"));
