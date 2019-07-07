@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/{{ style }}.css" />
+
+    <title>Welcome to the register</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand" href="#">Deliciously</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
+              <i class="fas fa-plus"></i> Add Recipe</a
+            >
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/home"
+              >Home<span class="sr-only"></span
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Collection</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/recipes">Recipes</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              {{!--
+              <img src="/assets/person.jpeg" alt="" class="img-thumbnail" />
+              --}}Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="page-top-section  card">
+      <img src="./assets/page-top-bg.jpg" alt="" />
+      <div class="container">
+        <h2 class="card-img-overlay">
+          All Recipes
+        </h2>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row myx-4">
+        <div class="col-12 mt-4">
+          {{!--
+          <h1 class="large text-danger my-2">Recipes</h1>
+          --}}
+        </div>
+      </div>
+      <div class="row">
+        {{#each recipes}}
+        <div class="col-md-3">
+          <div class="card text-left mb-5" id="card-deck">
+            <img
+              class="card-img-top round-image"
+              src="/assets/latest7.jpg"
+              alt=""
+            />
+            <div class="card-body">
+              <h4 class="card-title">{{ this.title }}</h4>
+              <p class="card-text"></p>
+              <div>
+                <p>{{ this.description }}</p>
+
+                <a href="/recipe/{{ this._id }}" class="btn btn-danger"
+                  >View Recipe</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{/each}}
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/{{ style }}.css" />
+
+    <link rel="stylesheet" href="/css/{{ style }}.css" />
+    <title>Add Recipe</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a class="navbar-brand" href="/home">Deliciously</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
+              <i class="fas fa-plus"></i> Add Recipe</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/home"
+              >Home<span class="sr-only"></span
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/recipes">Recipes</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              {{!--
+              <img src="/assets/person.jpeg" alt="" class="img-thumbnail" />
+              --}}Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Hero section -->
+    <section class="page-top-section set-bg card">
+      <img src="./assets/page-top-bg.jpg" alt="" />
+      <div class="container">
+        <h2 class="card-img-overlay">
+          Add Recipe
+        </h2>
+      </div>
+    </section>
+    <!-- Hero section end -->
+    <!-- ADD FORM -->
+    <form class=" pt-5 my-5 mx-5  p-4" method="POST" action="/add" id="form" style="background-color:lightgrey">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Brief Description</label>
+        <textarea
+          type=""
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder=""
+          name="description"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Categorize your recipe</label>
+        <div class="row">
+          <div class="col-4">
+            <label for="exampleFormControlSelect1">Recipe Type</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="recipetype"
+            />
+          </div>
+          <div class="col-4">
+            <label for="exampleFormControlSelect1"> Cuisine</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="cuisine"
+            />
+          </div>
+          <div class="col-4">
+            <label for="exampleFormControlSelect1"> Skill Level</label>
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              name="difficulty"
+            >
+              <option>Begginers</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"># of serving</label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          name="serving"
+        />
+      </div>
+      Ingredients
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">
+              Quantity
+            </th>
+            
+            <th scope="col">Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="quantity"
+              />
+            </td>
+          
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="item"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="quantity"
+              />
+            </td>
+           
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="item"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="quantity"
+              />
+            </td>
+          
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="item"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <label for="exampleInputEmail1">Time Taken</label>
+      <div class="row">
+        <div class="col-4">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Total Time </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="hours"
+                  name="totaltime"
+                />
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Cooking Time </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="hours"
+                  name="cookingtime"
+                />
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Preparation Time </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="hours"
+                  name="preptime"
+                />
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Instructions </label>
+        <textarea
+          type=""
+          class="form-control"
+          rows="8"
+          id="exampleInputPassword1"
+          placeholder=""
+          name="instructionsteps"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Upload Pictures</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="exampleFormControlFile1"
+        />
+      </div>
+      {{!--
+      <button
+        type="submit"
+        class="btn btn-lg"
+        id="sumbitBtn"
+        style="background-color:#DF2B2A; color:white;"
+      >
+        Submit
+      </button>
+      --}}
+      <input
+        type="submit"
+        class="btn btn-danger btn-block text-center"
+        value="Add a Recipe"
+      />
+    </form>
+    <!-- ADD FORM END -->
+  </body>
+</html>

@@ -1,7 +1,7 @@
 {
   "name": "proj-alpha_recipe-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "recipeapp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,15 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/attainu-falcon/proj-alpha_recipe-app.git"
   },
-  "author": "Shakti Pradhan",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/attainu-falcon/proj-alpha_recipe-app/issues"
   },
   "homepage": "https://github.com/attainu-falcon/proj-alpha_recipe-app#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongodb": "^3.2.7"
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "mongodb": "^3.2.7",
+    "multer": "^1.4.1"
   }
 }
+
