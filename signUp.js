@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
   res.render("signUp", {
     style: "signUp"
   });
@@ -11,6 +11,7 @@ router.post("/", (req, res) => {
   const newUser = {
     fullname: req.body.fullname,
     username: req.body.username,
+    email: req.body.email,
     password: req.body.password,
     myCollection: []
   };

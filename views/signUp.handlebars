@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,40 +13,36 @@
     <link rel="stylesheet" href="/css/{{style}}.css" />
     <title>SignUp</title>
 </head>
+
 <body>
     <section class="container">
         <div class="parent dark-overlay">
             <div class="card">
                 <h5 class="card-title text-center m-3">SIGNUP</h5>
-                <form class="" name="myform" action="/signup" method="POST">
-                    <div class="card-body ">
-                        <label>FullName</label>
+                <form class="needs-validation" name="myform" action="/signup" method="POST">
+                    <div class="card-body">
+                           <label for="validationCustom01 inputUsername">Username</label>
                         <div class="form-group ">
-                            <input type="text" class="form-control form-control-lg " id="fullname" name="fullname" />
+                            <input type="text" class="form-control form-control-lg" id="validationCustom01 inputUsername" name="username" placeholder="Enter username" required>
                         </div>
-                        <br />
-                        <label>Username</label>
+                        <label for="validationCustom02 inputEmail">Email</label>
                         <div class="form-group ">
-                            <input type="text" class="form-control form-control-lg" id="password" name="username"/>
+                            <input type="email" class="form-control form-control-lg" id="validationCustom02 inputEmail" name="email" placeholder="Enter email" required>
                         </div>
-                        <label>Password</label>
+                       <label for=" validationCustom03 inputPassword">Password</label>
                         <div class="form-group ">
-                            <input type="password" class="form-control form-control-lg" id="password" name="password" />
+                             <input type="password" class="form-control form-control-lg" id=" validationCustom03 password" name="password" placeholder="Enter password" required />
                         </div>
-                        {{!-- <div class="form-group text-center"> --}}
-                            {{!-- <a href="/login" class="btn btn-lg btn-danger m-2 " id="myBtn">SignUp</a> --}}
-                             
-                            <input
-                            type="submit"
-                            class="btn btn-danger btn-block text-center"
-                            value="SignUp"
-                            />               
+                        <br>
+                           <input type="submit" class="btn btn-danger btn-block text-center" value="SignUp"/>               
                             <br>
-                            Already have an account <a href="/login" class="">Login</a> here.
-                        {{!-- </div> --}}
+                            Already have an account? <a href="/login" class="">Login</a> here.
+                       
                 </form>
+
             </div>
         </div>
     </section>
 </body>
 </html>
+
