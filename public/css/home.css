@@ -107,7 +107,7 @@ body {
   right: 100%;
   bottom: 0;
   background: white;
-  height: 4px;
+  height: 2px;
   -webkit-transition-property: right;
   transition-property: right;
   -webkit-transition-duration: 0.3s;
