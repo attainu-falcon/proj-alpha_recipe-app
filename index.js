@@ -28,7 +28,7 @@ app.use("/", require("./landing"));
 app.use("/signup", require("./signUp"));
 app.use("/login", require("./login"));
 app.use("/reset", require("./reset"));
-
 app.use("/recipe", require("./viewRecipe"));
 app.use("/recipes", require("./allRecipes"));
 app.use("/collection", require("./myCollection"));
+

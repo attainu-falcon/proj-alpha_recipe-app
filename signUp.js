@@ -11,7 +11,9 @@ router.post("/", (req, res) => {
   const newUser = {
     fullname: req.body.fullname,
     username: req.body.username,
-    password: req.body.password
+    email: req.body.email,
+    password: req.body.password,
+    myCollection: []
   };
   db.collection("user").insert(newUser, (err, result) => {
     if (err) throw err;
