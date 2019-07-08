@@ -16,39 +16,53 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
-    <a class="navbar-brand" href="#">Deliciously</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto ">
-        <li class="nav-item hvr-underline-from-left">
-          <a class="nav-link btn btn-outline-light" href="/add" id="addBtn">
-            <i class="fas fa-plus"></i> Add Recipe</a>
-        </li>
-        <li class="nav-item active hvr-underline-from-left">
-          <a class="nav-link " href="#">Home<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item hvr-underline-from-left">
-          <a class="nav-link" href="#">My Collection</a>
-        </li>
-        <li class="nav-item hvr-underline-from-left">
-          <a class="nav-link" href="/recipes">Recipes</a>
-        </li>
-
-        <li class="nav-item hvr-underline-from-left">
-          <a class="nav-link" href="/login/logout">
-            {{!--
-            <img src="/assets/person.jpeg" alt="" class="img-thumbnail" />
-            --}}Logout
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg  bg-danger navbar-dark">
+  <a class="navbar-brand" href="/home">
+    Deliciously
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link btn btn-outline-light" href="/add" id="addBtn">
+          <i class="fas fa-plus"></i>
+          Add Recipe
+        </a>
+      </li>
+      <li class="nav-item active hvr-underline-from-left">
+        <a class="nav-link" href="/home">
+          Home
+          <span class="sr-only"></span>
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="#">
+          My Collection
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/recipes">
+          Recipes
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/login/logout">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
   <div class="">
     <img src="/assets/heroNew9.png" class="d-block w-100 " />
 
@@ -64,7 +78,7 @@
 
     <div class="row">
       {{#each recipes}}
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-4 col-sm-6">
         <div class="card text-left mb-4" id="card-deck">
           <img class="card-img-top round-image" src="{{this.image}}" alt="" />
 
@@ -83,6 +97,16 @@
       {{/each}}
     </div>
   </section>
+  <footer class="page-footer font-small blue bg-danger">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    © 2019 Copyright:
+    <a href="">
+      Project-Alpha
+    </a>
+  </div>
+  <!-- Copyright -->
+</footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"

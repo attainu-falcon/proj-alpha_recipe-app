@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 var recipeId;
 router.get("/", (req, res) => {
   var db = req.app.locals.db;
-  db.collection("myCollection")
+  db.collection("user")
     .find({ user: req.app.locals.username })
     .toArray((err, result) => {
       if (err) return console.log(err);
@@ -20,7 +20,6 @@ router.post("/", (req, res) => {
   db.collection("user").updateOne(
     { user: req.app.locals.username },
     { myCollection: { $push: { recipeId: req.body.recipeId } } },
-    newCollection,
     (err, result) => {
       if (err) throw err;
       console.log(result);

@@ -26,52 +26,56 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-      <a class="navbar-brand" href="#">Deliciously</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
-              <i class="fas fa-plus"></i> Add Recipe</a
-            >
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/home"
-              >Home<span class="sr-only"></span
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My Collection</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/recipes">Recipes</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              {{!--
-              <img src="/assets/person.jpeg" alt="" class="img-thumbnail" />
-              --}}Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <section class="page-top-section  card">
+<nav class="navbar navbar-expand-lg  bg-danger navbar-dark">
+  <a class="navbar-brand" href="/home">
+    Deliciously
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link btn btn-outline-light" href="/add" id="addBtn">
+          <i class="fas fa-plus"></i>
+          Add Recipe
+        </a>
+      </li>
+      <li class="nav-item active hvr-underline-from-left">
+        <a class="nav-link" href="/home">
+          Home
+          <span class="sr-only"></span>
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/collection">
+          My Collection
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/recipes">
+          Recipes
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/login/logout">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <section class="page-top-section ">
       <img src="./assets/page-top-bg.jpg" alt="" />
-      <div class="container">
+      <div class="container text-center">
         <h2 class="card-img-overlay">
           All Recipes
         </h2>
@@ -85,31 +89,36 @@
           --}}
         </div>
       </div>
-      <div class="row">
-        {{#each recipes}}
-        <div class="col-md-3">
-          <div class="card text-left mb-5" id="card-deck">
-            <img
-              class="card-img-top round-image"
-              src="/assets/latest7.jpg"
-              alt=""
-            />
-            <div class="card-body">
-              <h4 class="card-title">{{ this.title }}</h4>
-              <p class="card-text"></p>
-              <div>
-                <p>{{ this.description }}</p>
+     <div class="row">
+      {{#each recipes}}
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-left mb-4" id="card-deck">
+          <img class="card-img-top round-image" src="{{this.image}}" alt="" />
 
-                <a href="/recipe/{{ this._id }}" class="btn btn-danger"
-                  >View Recipe</a
-                >
-              </div>
-            </div>
+          <div class="card-body text-center">
+            <h4 class="card-title">{{ this.title }}</h4>
+            <p class="card-text" id="description"> {{ this.description }}</p>
+
+
           </div>
+          <p class="text-center" id="viewButton"> <a href="/recipe/{{ this._id }}" class="btn btn-danger mb-2 hvr-curl-top-left">View
+              Recipe</a></p>
         </div>
 
-        {{/each}}
       </div>
+
+      {{/each}}
+    </div>
     </section>
+    <footer class="page-footer font-small blue bg-danger">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    © 2019 Copyright:
+    <a href="">
+      Project-Alpha
+    </a>
+  </div>
+  <!-- Copyright -->
+</footer>
   </body>
 </html>

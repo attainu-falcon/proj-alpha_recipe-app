@@ -28,49 +28,53 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-      <a class="navbar-brand" href="/home">Deliciously</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
-              <i class="fas fa-plus"></i> Add Recipe</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/home"
-              >Home<span class="sr-only"></span
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My Collection</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/recipes">Recipes</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              {{!--
-              <img src="/assets/person.jpeg" alt="" class="img-thumbnail" />
-              --}}Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg  bg-danger navbar-dark">
+  <a class="navbar-brand" href="/home">
+    Deliciously
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto ">
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link btn btn-outline-light" href="/add" id="addBtn">
+          <i class="fas fa-plus"></i>
+          Add Recipe
+        </a>
+      </li>
+      <li class="nav-item active hvr-underline-from-left">
+        <a class="nav-link" href="/home">
+          Home
+          <span class="sr-only"></span>
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/collection">
+          My Collection
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/recipes">
+          Recipes
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/login/logout">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
     <!-- Hero section -->
     <section class="page-top-section set-bg card">
       <img src="./assets/page-top-bg.jpg" alt="" />
@@ -82,7 +86,7 @@
     </section>
     <!-- Hero section end -->
     <!-- ADD FORM -->
-    <form class=" pt-5 my-5 mx-5  p-4" method="POST" action="/add" id="form" style="background-color:lightgrey" enctype="multipart/form-data">
+    <form class=" pt-5 my-5 mx-5  p-4 bg-dark text-light" method="POST" action="/add" id="form" style="font-size:19px;" enctype="multipart/form-data">
       <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
         <input
@@ -93,7 +97,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Brief Description</label>
+        <label for="exampleInputPassword1">Brief Description:</label>
         <textarea
           type=""
           class="form-control"
@@ -104,10 +108,10 @@
         ></textarea>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect1">Categorize your recipe</label>
+        <label for="exampleFormControlSelect1">Categorize your recipe:</label>
         <div class="row">
           <div class="col-4">
-            <label for="exampleFormControlSelect1">Recipe Type</label>
+            <label for="exampleFormControlSelect1">Recipe Type:</label>
             <input
               type="text"
               class="form-control"
@@ -116,7 +120,7 @@
             />
           </div>
           <div class="col-4">
-            <label for="exampleFormControlSelect1"> Cuisine</label>
+            <label for="exampleFormControlSelect1"> Cuisine:</label>
             <input
               type="text"
               class="form-control"
@@ -125,7 +129,7 @@
             />
           </div>
           <div class="col-4">
-            <label for="exampleFormControlSelect1"> Skill Level</label>
+            <label for="exampleFormControlSelect1"> Skill Level:</label>
             <select
               class="form-control"
               id="exampleFormControlSelect1"
@@ -152,14 +156,14 @@
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col">
+            <th scope="col" style="color:white">
               Quantity
             </th>
             
-            <th scope="col">Item</th>
+            <th scope="col"  style="color:white">Item</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="tbody">
           <tr>
             <th scope="row"></th>
             <td>
@@ -167,16 +171,15 @@
                 type="text"
                 class="form-control"
                 id="exampleInputEmail1"
-                name="quantity"
+                name="quantity" 
               />
             </td>
-          
-            <td>
+              <td>
               <input
                 type="text"
                 class="form-control"
                 id="exampleInputEmail1"
-                name="item"
+                name="item" 
               />
             </td>
           </tr>
@@ -187,7 +190,7 @@
                 type="text"
                 class="form-control"
                 id="exampleInputEmail1"
-                name="quantity"
+                name="quantity" 
               />
             </td>
            
@@ -196,7 +199,7 @@
                 type="text"
                 class="form-control"
                 id="exampleInputEmail1"
-                name="item"
+                name="item" required
               />
             </td>
           </tr>
@@ -220,7 +223,13 @@
               />
             </td>
           </tr>
+      
+
+        
+
+      
         </tbody>
+<button class="btn btn-light btn-sm mx-2" type="button" id="addrow" ><i class="fa fa-plus"></i></button>
       </table>
       <label for="exampleInputEmail1">Time Taken</label>
       <div class="row">
@@ -296,16 +305,7 @@
           name="image" required
         />
       </div>
-      {{!--
-      <button
-        type="submit"
-        class="btn btn-lg"
-        id="sumbitBtn"
-        style="background-color:#DF2B2A; color:white;"
-      >
-        Submit
-      </button>
-      --}}
+ 
       <input
         type="submit"
         class="btn btn-danger btn-block text-center"
@@ -313,5 +313,21 @@
       />
     </form>
     <!-- ADD FORM END -->
+    <footer class="page-footer font-small blue bg-danger">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    © 2019 Copyright:
+    <a href="">
+      Project-Alpha
+    </a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<script src="/script/addrecipe.js"></script>
   </body>
 </html>

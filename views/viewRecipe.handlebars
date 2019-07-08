@@ -2,217 +2,212 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous" />
-<link rel="stylesheet" href="/css/{{style}}.css" />
-<title>DELICIOUSLY</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/{{style}}.css" />
+    <title>View Recipe</title>
 </head>
 
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <a class="navbar-brand" href="#">Deliciously</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a class="navbar-brand" href="/home">Deliciously</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item ">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item hvr-underline-from-left">
 
-                <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
-                    <i class="fas fa-plus"></i> Add Recipe</a>
+                    <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
+                        <i class="fas fa-plus"></i> Add Recipe</a>
 
-            </li>
-            <li class="nav-item ">
+                </li>
+                <li class="nav-item hvr-underline-from-left">
 
-                <a class="nav-link" href="/home">Home<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/home">Home<span class="sr-only"></span></a>
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">My Collection</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/recipes">Recipes</a>
-            </li>
+                </li>
+                <li class="nav-item hvr-underline-from-left">
+                    <a class="nav-link" href="/collection">My Collection</a>
+                </li>
+                <li class="nav-item hvr-underline-from-left">
+                    <a class="nav-link" href="/recipes">Recipes</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                {{!-- <img src="/assets/person.jpeg" alt="" class="rounded-circle" > --}} Logout
-                </a>
-            </li> 
-        </ul>  
-    </div>
-</nav>
-<section class="container-fluid mt-4">
-    <div class=" row my-1 ">
-   
-          {{#each recipe}}
+                <li class="nav-item hvr-underline-from-left">
+                    <a class="nav-link" href="/">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="container-fluid mt-4">
+        <div class=" row my-1 ">
 
-        <div class="container-fluid">
-            
-           <div class="img-background  p-2 text-center">
-                  <p class="large m-2 text-light">{{this.title}}</p>
-                
-                <img src="{{this.image}}" alt="" id="recipe-image" class="mt-2" style="border:10px double white;" />
-           
-                      <form action="/collection" method="POST">
-                <input type="hidden" name="title" value="{{this.title}}">
-                <input type="hidden" name="image" value="{{this.image}}">
-             
-                <input type="hidden" name="recipeId" value="{{this._id}}">
-                <button class="btn btn-danger text-center m-3">Add to my collection</button>
-                </form>
-  
+            {{#each recipe}}
+
+            <div class="container-fluid">
+
+                <div class="img-background  p-2 text-center">
+                    <p class="large m-2 text-light">{{this.title}}</p>
+
+                    <img src="{{this.image}}" alt="" id="recipe-image" class="mt-2" style="border:10px double white;" />
+
+                    <form action="/collection" method="POST">
+                        <input type="hidden" name="title" value="{{this.title}}">
+                        <input type="hidden" name="image" value="{{this.image}}">
+
+                        <input type="hidden" name="recipeId" value="{{this._id}}">
+                        <button class="btn btn-danger text-center m-3">Add to my collection</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- About -->
+        <div class=" bg-light p-2 my-3">
+            <h2 class="text-danger">Name</h2>
+            <p>
+                {{this.description}}
+            </p>
+            <div class="line"></div>
+            <h2 class="text-danger">Info</h2>
+            <div class="skills">
+                <div class="p-1"><i class="fas fa-check"></i>Serving:
+                    {{this.serving}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Total Time Taken:{{this.totaltime}}</div>
+                <div class="p-1">
+                    <i class="fas fa-check"></i> Cooking Time:{{this.cookingtime}}
+                </div>
+                <div class="p-1"><i class="fas fa-check"></i>Prep Time:{{this.preptime}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Difficulty Level:{{this.difficulty}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Cuisine:{{this.cuisine}}</div>
             </div>
         </div>
-      
-        
-        </div>
-        
-     
-    <!-- About -->
-    <div class=" bg-light p-2 my-3">
-        <h2 class="text-danger">Name</h2>
-        <p>
-            {{this.description}}
-        </p>
-        <div class="line"></div>
-        <h2 class="text-danger">Info</h2>
-        <div class="skills">
-            <div class="p-1"><i class="fas fa-check"></i>Serving:{{this.serving}}</div>
-            <div class="p-1"><i class="fas fa-check"></i>Total Time Taken{{this.totalTime}}</div>
-            <div class="p-1">
-                <i class="fas fa-check"></i> Cooking Time{{this.cookingTime}}
-            </div>
-            <div class="p-1"><i class="fas fa-check"></i>Prep Time{{this.prepTime}}</div>
-            <div class="p-1"><i class="fas fa-check"></i>Diggiculty Level:{{this.difficultyLevel}}</div>
-            <div class="p-1"><i class="fas fa-check"></i>Cuisine:{{this.cuisine}}</div>
-        </div>
-    </div>
-    <!-- Ingredients -->
-    <div class=" bg-light p-2 my-3">
-    <div class="row ">
-        <div class="col-4">
-            <h2 class="text-danger ">Ingredients</h2>
-            <div>
-                <ul class="">
-                    {{#each this.ingredients.item}}
-                    <li><input type="checkbox" name="" id="" />{{this}}</li>
-                    {{/each}}
-                </ul>
-            </div>
-            <div>
-                <ul class="">
-                    {{#each this.ingredients.quantity}}
-                    <li>{{this}}</li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-        <div class="col-6">
-            <!-- Instructions -->
-            <div class="  p-2">
-                <h2 class="text-danger ">Instructions</h2>
-                <div>
-                    <p class="">
-                        {{this.instructionsteps}}
-                    </p>
+        <!-- Ingredients -->
+        <div class=" bg-light p-2 my-3">
+            <div class="row ">
+                <div class="col-4">
+                    <h2 class="text-danger ">Ingredients</h2>
+                    <div  class="d-flex justify-content-flex-start">
+                         <div  class="">
+                        <ul class="">
+                            {{#each this.ingredients.quantity}}
+                            <li><input type="checkbox" name="" id="" class="mx-2"/>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="">
+                        <ul class="mx-2">
+                            {{#each this.ingredients.item}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                   
+                </div>
+                </div>
+                <div class="col-6">
+                    <!-- Instructions -->
+                    <div class="  p-2">
+                        <h2 class="text-danger ">Instructions</h2>
+                        <div>
+                            <p class="">
+                                {{this.instructionsteps}}
+                            </p>
 
-                    <p>
-                        Description:Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Dicta quos unde distinctio laborum qui tempora?Lorem ipsum
-                        dolor sit amet consectetur adipisicing elit. Quam aspernatur
-                        tenetur impedit quis molestiae non quisquam magnam modi
-                        exercitationem eius.
-                    </p>
+                            <p>
+                                Description:Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit. Dicta quos unde distinctio laborum qui tempora?Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. Quam aspernatur
+                                tenetur impedit quis molestiae non quisquam magnam modi
+                                exercitationem eius.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
- </div>
 
-    {{/each}}
-    <!-- REVIEW -->
-    <div class=" bg-light p-2 my-3">
-        <div class="row">
-       
-        <div class="col-md-12">
-               <h2 class="text-danger ">Reviews</h2>
-            <form class="" action="/recipe" method="POST">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="" name="title" />
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Review</label>
-                    <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1" placeholder=""
-                        name="review"></textarea>
-                </div>
+        {{/each}}
+        <!-- REVIEW -->
+        <div class=" bg-light p-2 my-3">
+            <div class="row">
 
-                <input type="submit" class="btn btn-danger btn-block" value="Add review">
+                <div class="col-md-12">
+                    <h2 class="text-danger ">Reviews</h2>
+                    <form class="" action="/recipe" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="" name="title" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Review</label>
+                            <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1"
+                                placeholder="" name="review"></textarea>
+                        </div>
 
-            </form>
-        </div>
-  </div>  
-  </div>
-    {{#each rating}}
-    <div class="row my-3 bg-light">
-        <div class="col-md-12">
-            <div class="">
-                <div>
-                    <h4 class="my-1">
-                        <a href="" class="text-danger">{{this.title}}</a>
-                    </h4>
-                    <p>
-                        {{this.review}}
-                    </p>
-                </div>
-                <div>
-                    <ul>
-                        <li class="badge badge-dark">Rating</li>
-                    </ul>
+                        <input type="submit" class="btn btn-danger btn-block" value="Add review">
+
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    {{/each}}
-    {{!-- <div class="row bg-white">
-        <div class="col-md-12">
-            <div>
-                <div>
-                    <h4 class="my-1">
-                        <a href="" class="text-danger ">Review Two</a>
-                    </h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        similique
-                    </p>
-                </div>
-                <div>
-                    <ul>
-                        <li class="badge badge-dark">Rating</li>
-                    </ul>
+        {{#each rating}}
+        <div class="row my-3 bg-light">
+            <div class="col-md-12">
+                <div class="">
+                    <div>
+                        <h4 class="my-1">
+                            <a href="" class="text-danger">{{this.title}}</a>
+                        </h4>
+                        <p>
+                            {{this.review}}
+                        </p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="badge badge-dark">Rating</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> --}}
-</section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+        {{/each}}
+
+    </section>
+    <footer class="page-footer font-small blue bg-danger">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2019 Copyright:
+            <a href="">
+                Project-Alpha
+            </a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

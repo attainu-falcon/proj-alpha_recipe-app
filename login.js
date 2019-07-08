@@ -30,6 +30,7 @@ router.post("/", (req, res) => {
 router.get("/logout", (req, res) => {
   req.session.destroy();
   req.app.locals.loggedIn = false;
+  req.app.locals.username = "";
   res.redirect("/");
 });
 module.exports = router;

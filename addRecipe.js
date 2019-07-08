@@ -11,9 +11,14 @@ cloudinary.config({
 });
 
 router.get("/", (req, res) => {
-  res.render("addRecipe", {
-    style: "addRecipe"
-  });
+  var db = req.app.locals.db;
+  if (req.app.locals.loggedIn === true) {
+    res.render("addRecipe", {
+      style: "addRecipe"
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 router.post("/", upload.single("image"), async (req, res) => {
