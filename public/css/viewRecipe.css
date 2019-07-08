@@ -186,3 +186,11 @@ form .stars span {
   -o-transition: -o-width 0.5s;
   transition: width 0.5s;
 }
+
+/* commentbox */
+.commentbox {
+  width: 900px;
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 0; 
+}
