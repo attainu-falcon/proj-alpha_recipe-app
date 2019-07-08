@@ -1,44 +1,69 @@
 const express = require("express");
 const router = express.Router();
-
+const ObjectId = require("mongodb").ObjectId;
 var recipeId;
 
-
 router.get("/", (req, res) => {
-  
-  var db = req.app.locals.db;
- db.collection("myCollection")
-    .find({user:"Neyanta"})
-      .toArray((err, result) => {
-      if (err) return console.log(err);
 
-      console.log(result);
-      console.log(recipeId);
-      res.render("myCollection", 
-      { collection: result, style: "myCollection" });
-    });
+                         
+    var db = req.app.locals.db;
+
+
+    db.collection("user")
+        .find({ username: req.app.locals.username })
+        .toArray((err, result) => {
+            if (err) {
+                return res.send();
+
+            }
+            console.log("Result of collection",result,test);
+            collect.data = result;
+
+            var col;
+            var array = [];
+            result[0].myCollection.forEach(function(stringId) {
+                array.push(ObjectId(stringId))
+            })
+            console.log(array);
+            db.collection("recipes")
+                .find({ _id: { $in: array } }).toArray(function(err, resu) {
+                    if ("Error =>", err) {}
+                    console.log(resu);
+                    res.render("myCollection", { collection: resu });
+                });
+            /* for(var i=0;i<result[0].myCollection.length;i++){
+
+
+    col = db.collection("recipes")
+      .find({_id:ObjectId(result[0].myCollection[i])})
+      .toArray((err,coll) =>{
+        if(err) {
+          return res.send();
+                 }
+         //console.log("FIRST RES",coll); 
+
+         data.list = coll;
+         return coll;
+          
+    })
+      // res.render("myCollection", { collection: coll});
+      }*/
+
+            //res.render("myCollection", { collection: coll, style: "myCollection" });
+        });
+ 
 });
 
 router.post("/", (req, res) => {
-  var db = req.app.locals.db;
-  const newCollection = {
-    user: req.body.user,
-    recId: req.body.recipeId,
-    title: req.body.title
-  };
-  recipeId = req.body.recipeId;
-  console.log(newCollection);
+    var db = req.app.locals.db;
+    recipeId = req.body.recipeId;
+    db.collection("user").updateOne({ username: req.app.locals.username }, { $push: { myCollection: recipeId } }, function(error, result) {
+        if (error) {
+            console.log(error)
 
-  db.collection("myCollection").insert(newCollection, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.redirect("collection");
-  });
-});
-   router.delete('/:id',function(req,res){
-  var db = req.app.locals.db;
-  db.collection('myCollection').deleteOne({recId: recipeId},function(err,result){
-    res.redirect("collection");
-  });
+        }
+        console.log("Sucess");
+        res.redirect("/collection");
+    })
 });
 module.exports = router;
