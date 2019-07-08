@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+   <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" /> -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/{{style}}.css" />
+
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {{!-- <script type="text/javascript" src = "rating.js"></script> --}}
     <title>DELICIOUSLY</title>
 </head>
 
@@ -166,18 +168,15 @@
                         <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1"
                             placeholder="" name="review"></textarea>
                     </div>
-
                     <input type="submit" class="btn btn-danger btn-block" value="add review">
-
                 </form>
             </div>
         </div>
         {{#each rating}}
-
-        <div class="row my-3 bg-white">
-
+        
+        {{!-- <div class="row my-3 bg-white"> --}}
             <div class="col-md-12">
-
+                <div class="commentbox">
                 <div class="stars">
                     <div>
                         <h4 class="my-1">
@@ -196,27 +195,8 @@
                 </div>   
             </div>
         </div>
-        {{/each}}
-        {{!-- <div class="row bg-white">
-            <div class="col-md-12">
-                <div>
-                    <div>
-                        <h4 class="my-1">
-                            <a href="" class="text-danger ">Review Two</a>
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                            similique
-                        </p>
-                    </div>
-                    <div>
-                        <ul>
-                            <li class="badge badge-dark">Rating</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        </div>
+        {{/each}}    
     </section>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -228,7 +208,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script type="type/javascript" src="rating.js"></script>
+          <script type="text/javascript" src="/rating.js"></script>
+
 </body>
 
 </html>
