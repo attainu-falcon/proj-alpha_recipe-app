@@ -5,17 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    
-    {{!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" /> --}}
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/{{style}}.css" />
+         
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/{{style}}.css" /> 
     <title>View Recipe</title>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>DELICIOUSLY</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                 </li>
                 <li class="nav-item hvr-underline-from-left">
 
-                    <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/home">Home<span class="sr-only"></span></a>
 
                 </li>
                 <li class="nav-item hvr-underline-from-left">
@@ -59,48 +59,51 @@
     <section class="container-fluid mt-4">
         <div class=" row my-1 ">
 
-            {{#each recipe}}
+            {{!-- {{#each recipe}} --}}
 
             <div class="container-fluid">
 
                 <div class="img-background  p-2 text-center">
-                    <p class="large m-2 text-light">{{this.title}}</p>
+                    <p class="large m-2 text-light">{{recipe.title}}</p>
+                    <p class="large m-2 text-light">Author:{{recipe.user}}</p>
 
-                    <img src="{{this.image}}" alt="" id="recipe-image" class="mt-2" style="border:10px double white;" />
+                    <img src="{{recipe.image}}" alt="" id="recipe-image" class="mt-2" style="border:10px double white;" />
+{{#if exist}}
+ <button class="btn btn-danger text-center m-3 disabled " >Already added to my collection</button>
+                 
 
-                    <form action="/collection/add" method="POST">
-                        <input type="hidden" name="title" value="{{this.title}}">
-                        <input type="hidden" name="image" value="{{this.image}}">
+    {{else}}     <form action="/collection/add" method="POST">
+                        <input type="hidden" name="title" value="{{recipe.title}}">
+                        <input type="hidden" name="image" value="{{recipe.image}}">
 
-                        <input type="hidden" name="recipeId" value="{{this._id}}">
-                        <button class="btn btn-danger text-center m-3">Add to my collection</button>
+                        <input type="hidden" name="recipeId" value="{{recipe._id}}">
+                        <button class="btn btn-danger text-center m-3 " >Add to my collection</button>
                     </form>
 
-                </div>
+      {{/if}}          
+      </div>
             </div>
 
 
         </div>
-
-
         <!-- About -->
         <div class=" bg-light p-2 my-3">
             <h2 class="text-danger">Name</h2>
             <p>
-                {{this.description}}
+                {{recipe.description}}
             </p>
             <div class="line"></div>
             <h2 class="text-danger">Info</h2>
             <div class="skills">
                 <div class="p-1"><i class="fas fa-check"></i>Serving:
-                    {{this.serving}}</div>
-                <div class="p-1"><i class="fas fa-check"></i>Total Time Taken:{{this.totaltime}}</div>
+                    {{recipe.serving}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Total Time Taken:{{recipe.totaltime}}</div>
                 <div class="p-1">
-                    <i class="fas fa-check"></i> Cooking Time:{{this.cookingtime}}
+                    <i class="fas fa-check"></i> Cooking Time:{{recipe.cookingtime}}
                 </div>
-                <div class="p-1"><i class="fas fa-check"></i>Prep Time:{{this.preptime}}</div>
-                <div class="p-1"><i class="fas fa-check"></i>Difficulty Level:{{this.difficulty}}</div>
-                <div class="p-1"><i class="fas fa-check"></i>Cuisine:{{this.cuisine}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Prep Time:{{recipe.preptime}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Difficulty Level:{{recipe.difficulty}}</div>
+                <div class="p-1"><i class="fas fa-check"></i>Cuisine:{{recipe.cuisine}}</div>
             </div>
         </div>
         <!-- Ingredients -->
@@ -111,14 +114,14 @@
                     <div  class="d-flex justify-content-flex-start">
                          <div  class="">
                         <ul class="">
-                            {{#each this.ingredients.quantity}}
+                            {{#each recipe.ingredients.quantity}}
                             <li><input type="checkbox" name="" id="" class="mx-2"/>{{this}}</li>
                             {{/each}}
                         </ul>
                     </div>
                     <div class="">
                         <ul class="mx-2">
-                            {{#each this.ingredients.item}}
+                            {{#each recipe.ingredients.item}}
                             <li>{{this}}</li>
                             {{/each}}
                         </ul>
@@ -132,7 +135,7 @@
                         <h2 class="text-danger ">Instructions</h2>
                         <div>
                             <p class="">
-                                {{this.instructionsteps}}
+                                {{recipe.instructionsteps}}
                             </p>
 
                             <p>
@@ -148,72 +151,71 @@
             </div>
         </div>
 
-        {{/each}}
+        {{!-- {{/each}} --}}
         <!-- REVIEW -->
+   <div class="row my-3 ">
+           <h2 class="text-danger">
+               REVIEWS
+           </h2>
+           <div class="col-md-12">
+               <form class="" action="/recipe" method="POST">
+               <div class="stars">
+               <input type="radio" name="star" class="star-1" id="star-1" value="1"/>
+               <label class="star-1" for="star-1" name="rating">1</label>
+               <input type="radio" name="star" class="star-2" id="star-2" value="2" />
+               <label class="star-2" for="star-2" name="rating">2</label>
+               <input type="radio" name="star" class="star-3" id="star-3" value="3"/>
+               <label class="star-3" for="star-3" name="rating">3</label>
+               <input type="radio" name="star" class="star-4" id="star-4" value="4"/>
+               <label class="star-4" for="star-4" name="rating">4</label>
+               <input type="radio" name="star" class="star-5" id="star-5" value="5"/>
+               <label class="star-5" for="star-5" name="rating">5</label>
 
-        <div class="row my-3 ">
-            <h2 class="text-danger">
-                REVIEWS
-            </h2>
-            <div class="col-md-12">
-                <form class="" action="/recipe" method="POST">
-                <div class="stars">
-                <input type="radio" name="star" class="star-1" id="star-1" value="1"/>
-                <label class="star-1" for="star-1" name="rating">1</label>
-                <input type="radio" name="star" class="star-2" id="star-2" value="2" />
-                <label class="star-2" for="star-2" name="rating">2</label>
-                <input type="radio" name="star" class="star-3" id="star-3" value="3"/>
-                <label class="star-3" for="star-3" name="rating">3</label>
-                <input type="radio" name="star" class="star-4" id="star-4" value="4"/>
-                <label class="star-4" for="star-4" name="rating">4</label>
-                <input type="radio" name="star" class="star-5" id="star-5" value="5"/>
-                <label class="star-5" for="star-5" name="rating">5</label>
-                <span></span>
-            </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="" name="title" />
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Review</label>
-                        <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1"
-                            placeholder="" name="review"></textarea>
-                    </div>
+               <span></span>
+           </div>
+                   <div class="form-group">
+                       {{!-- <label for="exampleInputEmail1">{{this.username}}</label> --}}
+                       <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                           placeholder="" name="username" value="{{this.username}}" />
+                   </div>
+                   <div class="form-group">
+                       <label for="exampleInputPassword1">Review</label>
+                       <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1"
+                           placeholder="" name="review"></textarea>
+                   </div>
+                   <input type="submit" class="btn btn-danger btn-block" value="add review">
+               </form>
+           </div>
+       </div>
+    {{#each rating}}
 
-                    <input type="submit" class="btn btn-danger btn-block" value="add review">
+       {{!-- <div class="row my-3 bg-white"> --}}
+           <div class="col-md-12">
+               <div class="commentbox">
+               <div class="stars" >
+                   <div>
+                       <h4 class="my-1">
+                           <a href="" class="text-danger">{{this.username}}</a>
+                       </h4>
+                       <p>
+                           {{this.review}}
+                       </p>
+                   </div>
+                   <div>
+                       <ul>
+                           <li class="badge badge-dark d-none" id="rating{{@index}}">{{this.rating}}</li>
+                           <p id="output{{@index}}"></p>
+                       </ul>
+                   </div>
+               </div>
+               <hr>
+           </div>
+       </div>
+       </div>
+       {{/each}}
 
-                </form>
-            </div>
-        </div>
-        {{#each rating}}
-
-        <div class="row my-3 bg-white">
-
-            <div class="col-md-12">
-
-                <div class="stars">
-                    <div>
-                        <h4 class="my-1">
-                            <a href="" class="text-danger">{{this.title}}</a>
-                        </h4>
-                        <p>
-                            {{this.review}}
-                        </p>
-                    </div>
-                    <div>
-                        <ul>
-                            <li class="badge badge-dark" id="rating{{@index}}">{{this.rating}}</li>
-                            <p id="output{{@index}}"></p>
-                        </ul>
-                    </div>
-                </div>   
-            </div>
-        </div>
-        {{/each}}
-       
-
-    </section>
+</section>
+ 
     <footer class="page-footer font-small blue bg-danger">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
@@ -234,7 +236,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script type="type/javascript" src="/rating.js"></script>
+  <script src="/script/rating.js"></script>
 </body>
 
 </html>

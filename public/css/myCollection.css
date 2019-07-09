@@ -36,43 +36,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.table th,
-.table td {
-  padding: 1rem;
-  text-align: left;
-}
-
-.table th {
-  background: #f4f4f4;
-}
-
-.form-group {
-  margin: 1.2rem 0;
-}
-
-.form-text {
-  display: block;
-  margin-top: 0.3rem;
-  color: #888;
-}
-
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="date"],
-.form select,
-.form textarea {
-  display: block;
-  width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-}
-
-.form input[type="submit"] {
-  font: inherit;
-}
-
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -89,7 +52,7 @@ body {
 }
 
 .card:hover {
-  background-color: lightslategray;
+  background-color: black;
   color: white;
 }
 .page-top-section {
