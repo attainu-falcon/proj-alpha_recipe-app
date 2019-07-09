@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+var md5 = require("md5");
 router.get("/", (req, res) => {
   res.render("login", {
     style: "login"
@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
       for (var i = 0; i < result.length; i++) {
         if (
           req.body.username === result[i].username &&
-          req.body.password === result[i].password
+          md5(req.body.password) === result[i].password
         ) {
           req.session.loggedIn = true;
           req.app.locals.loggedIn = req.session.loggedIn;
@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
 router.get("/logout", (req, res) => {
   req.session.destroy();
   req.app.locals.loggedIn = false;
+  req.app.locals.username = "";
   res.redirect("/");
 });
 module.exports = router;
-

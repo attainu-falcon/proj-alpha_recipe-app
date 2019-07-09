@@ -22,12 +22,12 @@
     />
     <link rel="stylesheet" href="/css/{{ style }}.css" />
 
-    <title>Welcome to the register</title>
+    <title>myCollection</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-      <a class="navbar-brand" href="#">Deliciously</a>
+      <a class="navbar-brand" href="/home">Deliciously</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -53,9 +53,9 @@
             ></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Collection</a>
+            <a class="nav-link active" href="/collection">My Collection</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/recipes">Recipes</a>
           </li>
 
@@ -72,26 +72,18 @@
     <section class="page-top-section  card">
       <img src="./assets/page-top-bg.jpg" alt="" />
       <div class="container">
-        <h2 class="card-img-overlay">
-          All Recipes
+        <h2 class="card-img-overlay" style="color:white">
+          Collection
         </h2>
-      </div>
-    </section>
-    <section class="container-fluid">
-      <div class="row myx-4">
-        <div class="col-12 mt-4">
-          {{!--
-          <h1 class="large text-danger my-2">Recipes</h1>
-          --}}
-        </div>
-      </div>
-      <div class="row">
-        {{#each recipes}}
+      </div> 
+    </section> 
+<div class="row">
+        {{#each collection}}
         <div class="col-md-3">
           <div class="card text-left mb-5" id="card-deck">
             <img
               class="card-img-top round-image"
-              src="/assets/latest7.jpg"
+              src="{{this.image}}"
               alt=""
             />
             <div class="card-body">
@@ -100,8 +92,8 @@
               <div>
                 <p>{{ this.description }}</p>
 
-                <a href="/recipe/{{ this._id }}" class="btn btn-danger"
-                  >View Recipe</a
+                <a href="/recipe/{{ this._id}}" class="btn btn-danger"
+                 >View Recipe</a
                 >
               </div>
             </div>
@@ -110,6 +102,6 @@
 
         {{/each}}
       </div>
-    </section>
+    </div>
   </body>
 </html>

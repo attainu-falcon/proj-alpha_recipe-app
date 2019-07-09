@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/attainu-falcon/proj-alpha_recipe-app#readme",
   "dependencies": {
+    "cloudinary": "^1.14.0",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
+    "md5": "^2.2.1",
     "mongodb": "^3.2.7",
     "multer": "^1.4.1"
   }
 }
-

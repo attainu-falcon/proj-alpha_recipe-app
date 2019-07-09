@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+var md5 = require("md5");
 router.get("/", (req, res) => {
   res.render("signUp", {
     style: "signUp"
@@ -11,8 +11,7 @@ router.post("/", (req, res) => {
   const newUser = {
     fullname: req.body.fullname,
     username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
+    password: md5(req.body.password),
     myCollection: []
   };
   db.collection("user").insert(newUser, (err, result) => {
