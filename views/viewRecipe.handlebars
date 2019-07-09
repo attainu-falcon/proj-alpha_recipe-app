@@ -5,13 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-        crossorigin="anonymous" />
+    
+    {{!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" /> --}}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/{{style}}.css" />
     <title>View Recipe</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>DELICIOUSLY</title>
 </head>
 
 <body>
@@ -28,13 +32,13 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item hvr-underline-from-left">
 
-                    <a class="nav-link  btn btn-outline-light" href="/add" id="addBtn">
+                    <a class="nav-link  btn btn-outline-light" href="/add">
                         <i class="fas fa-plus"></i> Add Recipe</a>
 
                 </li>
                 <li class="nav-item hvr-underline-from-left">
 
-                    <a class="nav-link" href="/home">Home<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/">Home<span class="sr-only"></span></a>
 
                 </li>
                 <li class="nav-item hvr-underline-from-left">
@@ -64,7 +68,7 @@
 
                     <img src="{{this.image}}" alt="" id="recipe-image" class="mt-2" style="border:10px double white;" />
 
-                    <form action="/collection" method="POST">
+                    <form action="/collection/add" method="POST">
                         <input type="hidden" name="title" value="{{this.title}}">
                         <input type="hidden" name="image" value="{{this.image}}">
 
@@ -146,33 +150,49 @@
 
         {{/each}}
         <!-- REVIEW -->
-        <div class=" bg-light p-2 my-3">
-            <div class="row">
 
-                <div class="col-md-12">
-                    <h2 class="text-danger ">Reviews</h2>
-                    <form class="" action="/recipe" method="POST">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Title</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="" name="title" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Review</label>
-                            <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1"
-                                placeholder="" name="review"></textarea>
-                        </div>
+        <div class="row my-3 ">
+            <h2 class="text-danger">
+                REVIEWS
+            </h2>
+            <div class="col-md-12">
+                <form class="" action="/recipe" method="POST">
+                <div class="stars">
+                <input type="radio" name="star" class="star-1" id="star-1" value="1"/>
+                <label class="star-1" for="star-1" name="rating">1</label>
+                <input type="radio" name="star" class="star-2" id="star-2" value="2" />
+                <label class="star-2" for="star-2" name="rating">2</label>
+                <input type="radio" name="star" class="star-3" id="star-3" value="3"/>
+                <label class="star-3" for="star-3" name="rating">3</label>
+                <input type="radio" name="star" class="star-4" id="star-4" value="4"/>
+                <label class="star-4" for="star-4" name="rating">4</label>
+                <input type="radio" name="star" class="star-5" id="star-5" value="5"/>
+                <label class="star-5" for="star-5" name="rating">5</label>
+                <span></span>
+            </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="" name="title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Review</label>
+                        <textarea type="textarea" class="form-control" rows="5" id="exampleInputPassword1"
+                            placeholder="" name="review"></textarea>
+                    </div>
 
-                        <input type="submit" class="btn btn-danger btn-block" value="Add review">
+                    <input type="submit" class="btn btn-danger btn-block" value="add review">
 
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
         {{#each rating}}
-        <div class="row my-3 bg-light">
+
+        <div class="row my-3 bg-white">
+
             <div class="col-md-12">
-                <div class="">
+
+                <div class="stars">
                     <div>
                         <h4 class="my-1">
                             <a href="" class="text-danger">{{this.title}}</a>
@@ -183,13 +203,15 @@
                     </div>
                     <div>
                         <ul>
-                            <li class="badge badge-dark">Rating</li>
+                            <li class="badge badge-dark" id="rating{{@index}}">{{this.rating}}</li>
+                            <p id="output{{@index}}"></p>
                         </ul>
                     </div>
-                </div>
+                </div>   
             </div>
         </div>
         {{/each}}
+       
 
     </section>
     <footer class="page-footer font-small blue bg-danger">
@@ -202,12 +224,17 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script type="type/javascript" src="/rating.js"></script>
 </body>
 
 </html>

@@ -7,6 +7,7 @@ const MongoClient = require("mongodb").MongoClient;
 var objectId = require("mongodb").ObjectID;
 var session = require("express-session");
 var db;
+var md5 = require("md5");
 app.locals.loggedIn;
 app.locals.username;
 var url =
