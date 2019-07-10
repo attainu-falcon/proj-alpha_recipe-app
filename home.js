@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     db.collection("recipes")
       .find()
       .sort({ _id: -1 })
-      .limit(8)
+      .limit(6)
       .toArray((err, result) => {
         if (err) return console.log(err);
         console.log(result);

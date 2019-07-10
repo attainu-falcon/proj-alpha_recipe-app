@@ -3,14 +3,20 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   var db = req.app.locals.db;
-  db.collection("recipes")
-    .find()
-    .sort({ recipeId: -1 })
-    .toArray((err, result) => {
-      if (err) return console.log(err);
+  if (req.app.locals.loggedIn === true) {
+    var recipeId;
 
-      console.log(result);
-      res.render("allRecipes", { recipes: result, style: "allRecipes" });
-    });
+    db.collection("recipes")
+      .find()
+      .sort({ _id: -1 })
+      .toArray((err, result) => {
+        if (err) return console.log(err);
+        console.log(result);
+        console.log(recipeId);
+        res.render("allRecipes", { recipes: result, style: "allRecipes" });
+      });
+  } else {
+    res.redirect("/");
+  }
 });
 module.exports = router;
