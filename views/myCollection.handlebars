@@ -20,6 +20,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+  
     <link rel="stylesheet" href="/css/{{ style }}.css" />
 
     <title>myCollection</title>
@@ -27,7 +28,9 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-      <a class="navbar-brand" href="/home">Deliciously</a>
+     <a class="navbar-brand" href="/home" style="font-family: 'Dancing Script', cursive; letter-spacing: 0.1em;font-size:2em">
+    Deliciously
+  </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -69,39 +72,41 @@
         </ul>
       </div>
     </nav>
-    <section class="page-top-section  card">
+    <section class="page-top-section ">
       <img src="./assets/page-top-bg.jpg" alt="" />
-      <div class="container">
-        <h2 class="card-img-overlay" style="color:white">
-          Collection
+      <div class="container mt-5">
+        <h2 class="card-img-overlay " style="color:white">
+         Collection
         </h2>
       </div> 
-    </section> 
-<div class="row">
+    </section>
+    <section class="container-fluid">
+<div class="row m-2">
         {{#each collection}}
-        <div class="col-md-3">
+        <div class="col-md-4 col-sm-6">
           <div class="card text-left mb-5" id="card-deck">
             <img
               class="card-img-top round-image"
               src="{{this.image}}"
               alt=""
             />
-            <div class="card-body">
+            <div class="card-body text-center">
               <h4 class="card-title">{{ this.title }}</h4>
-              <p class="card-text"></p>
-              <div>
-                <p>{{ this.description }}</p>
-
-                <a href="/recipe/{{ this._id}}" class="btn btn-danger"
+           <p class="card-text" id="description"> {{ this.description }}</p>
+         </div>
+             <p class="text-center" id="viewButton">  <a href="/recipe/{{ this._id}}" class="btn btn-danger hvr-curl-top-left"
                  >View Recipe</a
-                >
+                ></p>
+
+              
               </div>
             </div>
+             {{/each}}
           </div>
-        </div>
+    
 
-        {{/each}}
-      </div>
-    </div>
-  </body>
+ </section>      
+    
+  
+ 
 </html>

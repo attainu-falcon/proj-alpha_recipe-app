@@ -14,6 +14,7 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
     crossorigin="anonymous" />
+
   <link rel="stylesheet" href="/css/{{style}}.css" /> 
     <title>View Recipe</title>
 </head>
@@ -21,41 +22,53 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <a class="navbar-brand" href="/home">Deliciously</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item hvr-underline-from-left">
-
-                    <a class="nav-link  btn btn-outline-light" href="/add">
-                        <i class="fas fa-plus"></i> Add Recipe</a>
-
-                </li>
-                <li class="nav-item hvr-underline-from-left">
-
-                    <a class="nav-link" href="/home">Home<span class="sr-only"></span></a>
-
-                </li>
-                <li class="nav-item hvr-underline-from-left">
-                    <a class="nav-link" href="/collection">My Collection</a>
-                </li>
-                <li class="nav-item hvr-underline-from-left">
-                    <a class="nav-link" href="/recipes">Recipes</a>
-                </li>
-
-                <li class="nav-item hvr-underline-from-left">
-                    <a class="nav-link" href="/">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg  bg-danger navbar-dark">
+  <a class="navbar-brand" href="/home" style="font-family: 'Dancing Script', cursive; letter-spacing: 0.1em;font-size:2em">
+    Deliciously
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link btn btn-outline-light" href="/add" id="addBtn">
+          <i class="fas fa-plus"></i>
+          Add Recipe
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/home">
+          Home
+          <span class="sr-only"></span>
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/collection">
+          My Collection
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/recipes">
+          Recipes
+        </a>
+      </li>
+      <li class="nav-item hvr-underline-from-left">
+        <a class="nav-link" href="/login/logout">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
     <section class="container-fluid mt-4">
         <div class=" row my-1 ">
 
@@ -63,16 +76,19 @@
 
             <div class="container-fluid">
 
-                <div class="img-background  p-2 text-center">
-                    <p class="large m-2 text-light">{{recipe.title}}</p>
-                    <p class="large m-2 text-light">Author:{{recipe.user}}</p>
+                <div class="img-background  p-4 text-center">
+                    <p class="large  text-light">{{recipe.title}}</p>
+                    <p class="lead text-light">Author:
+                        {{recipe.user}}</p>
 
-                    <img src="{{recipe.image}}" alt="" id="recipe-image" class="mt-2" style="border:10px double white;" />
+                    <img src="{{recipe.image}}" alt="" id="recipe-image" class="" style="border:10px double white;" />
 {{#if exist}}
- <button class="btn btn-danger text-center m-3 disabled " >Already added to my collection</button>
+<button class="btn btn-sm btn-danger text-center disabled m-3 " >Added</button>
+
                  
 
-    {{else}}     <form action="/collection/add" method="POST">
+    {{else}}     
+    <form action="/collection/add" method="POST">
                         <input type="hidden" name="title" value="{{recipe.title}}">
                         <input type="hidden" name="image" value="{{recipe.image}}">
 
@@ -88,7 +104,7 @@
         </div>
         <!-- About -->
         <div class=" bg-light p-2 my-3">
-            <h2 class="text-danger">Name</h2>
+            <h2 class="text-danger">Description</h2>
             <p>
                 {{recipe.description}}
             </p>
@@ -115,7 +131,7 @@
                          <div  class="">
                         <ul class="">
                             {{#each recipe.ingredients.quantity}}
-                            <li><input type="checkbox" name="" id="" class="mx-2"/>{{this}}</li>
+                            <li>{{this}}</li>
                             {{/each}}
                         </ul>
                     </div>
